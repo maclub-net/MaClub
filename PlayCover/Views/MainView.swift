@@ -26,59 +26,52 @@ struct MainView: View {
     @State private var selectedBackgroundColor: Color = Color.accentColor
     @State private var selectedTextColor: Color = Color.black
 
+    @State private var showMaclubLoginSheet = false
+    @State private var showMaclubUserProfile = false
+    @StateObject private var maclubAuthService = AuthService.shared
+
     @ObservedObject private var URLObserved = URLObservable.shared
 
     var body: some View {
         GeometryReader { viewGeom in
             NavigationView {
                 GeometryReader { sidebarGeom in
-                    List {
-                        NavigationLink(tag: 1, selection: $selectedView) {
-                            AppLibraryView(selectedBackgroundColor: $selectedBackgroundColor,
-                                                                       selectedTextColor: $selectedTextColor)
-                        } label: {
-                            Label("sidebar.appLibrary", systemImage: "square.grid.2x2")
-                        }
-                        NavigationLink(tag: 2, selection: $selectedView) {
-                            IPALibraryView(storeVM: store,
-                                           selectedBackgroundColor: $selectedBackgroundColor,
-                                           selectedTextColor: $selectedTextColor)
-                            .environmentObject(store)
-                        } label: {
-                            HStack {
-                                Label("sidebar.ipaLibrary", systemImage: "arrow.down.circle")
-                                Button {
-                                    withAnimation {
-                                        showSourceFolders.toggle()
-                                    }
-                                } label: {
-                                    Image(systemName: showSourceFolders ? "chevron.up" : "chevron.down")
-                                        .font(.caption)
-                                }
-                                .buttonStyle(.plain)
+                    VStack(spacing: 0) {
+                        List {
+                            NavigationLink(tag: 1, selection: $selectedView) {
+                                MaclubHomeView()
+                            } label: {
+                                Label("应用商店", systemImage: "magnifyingglass")
+                            }
+                            NavigationLink(tag: 2, selection: $selectedView) {
+                                AppLibraryView(selectedBackgroundColor: $selectedBackgroundColor,
+                                                                           selectedTextColor: $selectedTextColor)
+                            } label: {
+                                Label("sidebar.appLibrary", systemImage: "square.grid.2x2")
+                            }
+                            NavigationLink(tag: 101, selection: $selectedView) {
+                                MaclubToolLibraryView()
+                            } label: {
+                                Label("工具库", systemImage: "wrench.and.screwdriver")
+                            }
+                            NavigationLink(tag: 102, selection: $selectedView) {
+                                MaclubDownloadManagerView()
+                            } label: {
+                                Label("下载管理", systemImage: "arrow.down.circle")
                             }
                         }
-                        if showSourceFolders {
-                            let enabledSources: [SourceJSON] = StoreVM.shared.getEnabledSources()
-                            ForEach(enabledSources, id: \.hashValue) { source in
-                                    NavigationLink(tag: source.hashValue, selection: $selectedView) {
-                                    IPASourceView(storeVM: store,
-                                                  selectedBackgroundColor: $selectedBackgroundColor,
-                                                  selectedTextColor: $selectedTextColor,
-                                                  sourceName: source.name,
-                                                  sourceApps: source.data)
-                                    .environmentObject(store)
-                                } label: {
-                                    Label(source.name, systemImage: "folder")
-                                        .font(.caption)
-                                        .padding(.leading)
-                                }
-                            }
-                        }
+
+                        Divider()
+
+                        MaclubUserStatusView(
+                            authService: maclubAuthService,
+                            showLoginSheet: $showMaclubLoginSheet,
+                            showUserProfile: $showMaclubUserProfile
+                        )
                     }
                     .frame(minWidth: 150)
                     .toolbar {
-                        ToolbarItem { // Sits on the left by default
+                        ToolbarItem {
                             Button {
                                 toggleSidebar()
                             } label: {
@@ -165,6 +158,15 @@ struct MainView: View {
             }
             .sheet(isPresented: $keyCoverObserved.isKeyCoverUnlockingPromptShown) {
                 KeyCoverUnlockingPrompt()
+            }
+            .sheet(isPresented: $showMaclubLoginSheet) {
+                MaclubLoginView()
+            }
+            .sheet(isPresented: $showMaclubUserProfile) {
+                MaclubUserProfileView()
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .showLoginSheet)) { _ in
+                showMaclubLoginSheet = true
             }
         }
         .frame(minWidth: 675, minHeight: 330)

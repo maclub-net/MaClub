@@ -29,7 +29,7 @@ class PlayTools {
         let playCoverPath = FileManager.default.homeDirectoryForCurrentUser
             .appendingPathComponent("Library")
             .appendingPathComponent("Containers")
-            .appendingPathComponent("io.playcover.PlayCover")
+            .appendingPathComponent("net.maclub.www")
         if !FileManager.default.fileExists(atPath: playCoverPath.path) {
             do {
                 try FileManager.default.createDirectory(at: playCoverPath,

@@ -18,7 +18,7 @@
 "alert.errorImportKm" = "Lỗi khi nhập keymap, vui lòng thử lại!";
 "alert.app.delete" = "Mọi dữ kiệu của ứng dụng sẽ bị xóa và bạn sẽ có thể phải lại toàn bộ chúng. Bạn chắc chứ?";
 "alert.app.preferences" = "Tất cả các tùy chọn trong ứng dụng sẽ bị xóa. Bạn có muốn tiếp tục không?";
-"alert.restart" = "Vui lòng khởi động lại PlayCover.";
+"alert.restart" = "Vui lòng khởi động lại MaClub.";
 "alert.error" = "Đã xảy ra lỗi!";
 "alert.success" = "Xong";
 "alert.moveAppToApplications.move" = "Di chuyển đến thư mục Ứng dụng";
@@ -38,7 +38,7 @@
 "settings.text.customHeight" = "Chiều cao";
 "settings.text.customWidth" = "Chiều rộng";
 "notification.appInstalled" = "Ứng dụng đã cài đặt!";
-"notification.appInstalled.message" = "Kiểm tra trong PlayCover!";
+"notification.appInstalled.message" = "Kiểm tra trong MaClub!";
 "settings.button.discord" = "Tuỳ chỉnh trạng thái Discord";
 "settings.button.clearActivity" = "Xóa hoạt động tùy chỉnh";
 "settings.text.applicationID" = "ID ứng dụng";
@@ -50,7 +50,7 @@
 "settings.text.state.help" = "Hàng thứ hai bên dưới tiêu đề";
 "settings.toggle.discord" = "Bật hoạt động tuỳ chỉnh cho Discord";
 "menubar.log.copy" = "Sao chép nhật ký";
-"menubar.documentation" = "Tài liệu (nhớ chuyển PlayCover về tiếng Anh cho tiện thao tác)";
+"menubar.documentation" = "Tài liệu (nhớ chuyển MaClub về tiếng Anh cho tiện thao tác)";
 "menubar.website" = "Website";
 "menubar.github" = "GitHub";
 "menubar.discord" = "Discord";
@@ -73,10 +73,10 @@
 "button.Quit" = "Bỏ";
 "playapp.exportKmPanel.fieldLabel" = "Tên keymap:";
 "sidebar.appLibrary" = "App đã cài đặt";
-"alert.moveAppToApplications.subtitle" = "PlayCover phải nằm trong thư mục Ứng dụng để chạy chính xác. Nhấn nút bên dưới để di tự động di chuyển.";
+"alert.moveAppToApplications.subtitle" = "MaClub phải nằm trong thư mục Ứng dụng để chạy chính xác. Nhấn nút bên dưới để di tự động di chuyển.";
 "error.appEncrypted" = "Ứng dụng này được mã hóa! Vui lòng sử dụng IPA đã được giải mã. Các file giải mã bằng iMazing không được hỗ trợ!";
 "error.appCorrupted" = "Đã xảy ra sự cố với IPA này. Vui lòng thử sử dụng một tệp IPA khác.";
-"error.appProhibited" = "Sử dụng ứng dụng này thông qua PlayCover có thể sẽ bị ăn ban!";
+"error.appProhibited" = "Sử dụng ứng dụng này thông qua MaClub có thể sẽ bị ăn ban!";
 "settings.title" = "Settings";
 "settings.tab.info" = "Thông tin";
 "settings.tab.km" = "Keymapping";
@@ -109,7 +109,7 @@
 "playapp.deleteConfirm" = "Gỡ cài đặt";
 "playapp.deleteMessage" = "Bạn có chắc muốn gỡ cài đặt %@?";
 "settings.text.detectedResolution" = "Độ phân giải được phát hiện:";
-"alert.wrongFileType.subtitle" = "PlayCover chỉ có thể cài đặt các tệp .ipa hợp lệ.";
+"alert.wrongFileType.subtitle" = "MaClub chỉ có thể cài đặt các tệp .ipa hợp lệ.";
 "playapp.add" = "Thêm ứng dụng";
 "alert.wrongFileType.title" = "Sai loại tệp!";
 "playapp.addSource" = "Thêm nguồn";
@@ -138,9 +138,9 @@
 "preferences.toggle.removeSetting" = "Xoá thiết lập ứng dụng";
 "preferences.toggle.removeEntitlements" = "Xoá quyền đã cấp";
 "preferences.button.pruneFiles" = "Dọn dẹp";
-"preferences.prune.message" = "Khi xác nhận, PlayCover sẽ gỡ bỏ các thiết lập, keymap và dữ liệu của ứng dụng cài qua PlayCover mà không dùng đến";
+"preferences.prune.message" = "Khi xác nhận, MaClub sẽ gỡ bỏ các thiết lập, keymap và dữ liệu của ứng dụng cài qua MaClub mà không dùng đến";
 "playapp.progress.failed" = "Thất bại";
-"alert.supression" = "Bạn có thể thay đổi điều này trong thiết lập của PlayCover";
+"alert.supression" = "Bạn có thể thay đổi điều này trong thiết lập của MaClub";
 "preferences.tab.install" = "Cài đặt";
 "preferences.toggle.showInstallPopup" = "Luôn hiển thị cửa sổ cài đặt";
 "preferences.toggle.alwaysInstallPlayTools" = "Luôn cài đặt PlayTools";
@@ -151,7 +151,7 @@
 "settings.removePlayTools" = "Xóa PlayTools";
 "settings.info.playTools" = "PlayTools đã được cài đặt:";
 "playapp.refreshSources" = "Làm mới nguồn";
-"error.appMaliciousProhibited" = "Ứng dụng này có thể gây lỗi máy Mac của bạn. Tiếp tục sử dụng có thể làm hỏng phần mềm hoặc thiết bị. PlayCover đã chặn ứng dụng này";
+"error.appMaliciousProhibited" = "Ứng dụng này có thể gây lỗi máy Mac của bạn. Tiếp tục sử dụng có thể làm hỏng phần mềm hoặc thiết bị. MaClub đã chặn ứng dụng này";
 "alert.install.injectPlayToolsQuestion" = "Bạn có muốn cài đặt PlayTools vào ứng dụng này?";
 "alert.install.playToolsInformative" = "PlayTools là một công cụ cho phép gán phím vào điều khiển cảm ứng, đặt độ phân giải tuỳ chỉnh, v.v. nhưng có thể làm lỗi một số ứng dụng nhất định";
 "button.Help" = "Trợ giúp";

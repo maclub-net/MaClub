@@ -210,7 +210,7 @@ class Keymapping {
         openPanel.allowsMultipleSelection = false
         openPanel.canChooseDirectories = false
         openPanel.canCreateDirectories = true
-        openPanel.allowedContentTypes = [UTType(exportedAs: "io.playcover.PlayCover-playmap")]
+        openPanel.allowedContentTypes = [UTType(exportedAs: "net.maclub.www-playmap")]
         openPanel.title = NSLocalizedString("playapp.importKm", comment: "")
 
         openPanel.begin { result in
@@ -260,7 +260,7 @@ class Keymapping {
         savePanel.title = NSLocalizedString("playapp.exportKm", comment: "")
         savePanel.nameFieldLabel = NSLocalizedString("playapp.exportKmPanel.fieldLabel", comment: "")
         savePanel.nameFieldStringValue = info.displayName
-        savePanel.allowedContentTypes = [UTType(exportedAs: "io.playcover.PlayCover-playmap")]
+        savePanel.allowedContentTypes = [UTType(exportedAs: "net.maclub.www-playmap")]
         savePanel.canCreateDirectories = true
         savePanel.isExtensionHidden = false
 

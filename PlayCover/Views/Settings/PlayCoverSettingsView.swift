@@ -23,12 +23,6 @@ struct PlayCoverSettingsView: View {
                     Label("preferences.tab.updates", systemImage: "square.and.arrow.down")
                 }
                 .tag(Tabs.updates)
-            IPASourceSettings()
-                .tabItem {
-                    Label("preferences.tab.ipasource", systemImage: "list.bullet")
-                }
-                .tag(Tabs.ipasource)
-                .environmentObject(storeVM)
             KeyCoverSettings.shared
                 .tabItem {
                     Label("KeyCover", systemImage: "key.fill")

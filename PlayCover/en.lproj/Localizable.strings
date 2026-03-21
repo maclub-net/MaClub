@@ -95,20 +95,20 @@
 "alert.app.delete" = "All app data will be erased. You may need to download app files again. Do you wish to continue?";
 "alert.app.preferences" = "All in-app preferences will be deleted. Do you wish to continue?";
 "alert.app.clearPlayChain" = "All PlayChain data will be erased. You may need to login to the app again. Do you wish to continue?";
-"alert.restart" = "Please restart PlayCover.";
+"alert.restart" = "Please restart MaClub.";
 "alert.error" = "An error occurred!";
 "alert.success" = "Success";
 "alert.moveAppToApplications.title" = "Move to Applications folder?";
-"alert.moveAppToApplications.subtitle" = "PlayCover must be in the Applications folder to run correctly. Press the button below to move PlayCover automatically.";
+"alert.moveAppToApplications.subtitle" = "MaClub must be in the Applications folder to run correctly. Press the button below to move MaClub automatically.";
 "alert.moveAppToApplications.move" = "Move to Applications folder";
 "alert.legacyImport.title" = "Legacy App Settings Detected!";
 "alert.legacyImport.subtitle" = "Legacy settings and keymapping files were detected. Would you like to convert these files to the new format?";
 "alert.wrongFileType.title" = "Wrong file type!";
-"alert.wrongFileType.subtitle" = "PlayCover can only install valid .ipa files.";
+"alert.wrongFileType.subtitle" = "MaClub can only install valid .ipa files.";
 "alert.install.injectPlayTools" = "Inject PlayTools";
 "alert.install.injectPlayToolsQuestion" = "Do you want to inject PlayTools into this application?";
 "alert.install.playToolsInformative" = "PlayTools is a tool that allows you to bind keys to screen touches, custom display resolutions, and more, but it may break certain apps";
-"alert.supression" = "You can change this in the PlayCover preferences";
+"alert.supression" = "You can change this in the MaClub preferences";
 "alert.differentBundleIdKeymap.message" = "The keymap may have been created for another application.";
 "alert.differentBundleIdKeymap.text" = "Are you sure you want to import this keymap?";
 "alert.power.title" = "Low Power Mode Enabled!";
@@ -139,8 +139,8 @@
 "error.waitDownload" = "Please wait for the current download to finish!";
 "error.appEncrypted" = "This app is encrypted! Please use a decrypted IPA. iMazing IPAs are not supported!";
 "error.appCorrupted" = "Something went wrong with this IPA. Please try to use another IPA file.";
-"error.appProhibited" = "Using this app through PlayCover will likely result in a ban!";
-"error.appMaliciousProhibited" = "This App behaves maliciously on Macs, and using it can leave your device in an unbootable state, therefore it is blocked from PlayCover. (Uninstalling...)";
+"error.appProhibited" = "Using this app through MaClub will likely result in a ban!";
+"error.appMaliciousProhibited" = "This App behaves maliciously on Macs, and using it can leave your device in an unbootable state, therefore it is blocked from MaClub. (Uninstalling...)";
 "error.failedToStripBinary" = "Could not find ARM64 arch in fat binary!";
 
 "menubar.exportToSideloady" = "Export to Sideloadly";
@@ -221,7 +221,7 @@
 "settings.deleteKmFailed" = "Keymap %@ failed to delete";
 
 "notification.appInstalled" = "App installed!";
-"notification.appInstalled.message" = "Check it out in PlayCover!";
+"notification.appInstalled.message" = "Check it out in MaClub!";
 
 "menubar.log.copy" = "Copy Logs";
 "menubar.documentation" = "Documentation";

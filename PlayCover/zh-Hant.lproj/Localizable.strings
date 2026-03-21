@@ -20,7 +20,7 @@
 "alert.moveAppToApplications.move" = "移至應用程式資料夾";
 
 /* (No Comment) */
-"alert.restart" = "請重啟 PlayCover。";
+"alert.restart" = "請重啟 MaClub。";
 
 /* (No Comment) */
 "alert.success" = "成功";
@@ -167,10 +167,10 @@
 "sidebar.appLibrary" = "App資料庫";
 "sidebar.ipaLibrary" = "IPA資料庫";
 "alert.moveAppToApplications.title" = "是否移動到應用程式資料夾？";
-"alert.moveAppToApplications.subtitle" = "PlayCover必須在應用程式資料夾中才能正常運作。點擊下方按鈕會使PlayCover自動移至應用程式資料夾。";
+"alert.moveAppToApplications.subtitle" = "MaClub必須在應用程式資料夾中才能正常運作。點擊下方按鈕會使MaClub自動移至應用程式資料夾。";
 "error.appEncrypted" = "此應用程式已被加密！請使用未加密的IPA文件。現已不再支援使用iMazing輸出的IPA檔案！";
 "error.appCorrupted" = "此IPA檔案中包含一些錯誤。請嘗試使用其他IPA檔案。";
-"error.appProhibited" = "在PlayCover中使用這個應用程式可能會遭到封禁！";
+"error.appProhibited" = "在MaClub中使用這個應用程式可能會遭到封禁！";
 "settings.title" = "%@ 設定";
 "settings.tab.info" = "詳細資料";
 "settings.tab.km" = "鍵盤映射佈局";
@@ -214,7 +214,7 @@
 "settings.text.detectedResolution" = "檢測到的解析度:";
 "playapp.add" = "新增應用程式";
 "alert.wrongFileType.title" = "錯誤的檔案類型！";
-"alert.wrongFileType.subtitle" = "PlayCover 只可以安裝有效的 .ipa 檔案。";
+"alert.wrongFileType.subtitle" = "MaClub 只可以安裝有效的 .ipa 檔案。";
 "playapp.addSource" = "新增來源";
 "ipaLibrary.noSources.title" = "尚未新增 IPA 來源";
 "ipaLibrary.noSources.subtitle" = "您目前沒有新增 IPA 來源。點擊下方的按鈕來新增一個。";
@@ -242,7 +242,7 @@
 "preferences.prune.alert" = "您確定要刪除所有未被使用的檔案嗎？";
 "preferences.prune.message" = "這將刪除所有未使用的檔案，包括設定、鍵盤映射、授權和應用程式數據";
 "playapp.progress.failed" = "失敗";
-"alert.supression" = "你可以在 PlayCover 偏好設定中更改";
+"alert.supression" = "你可以在 MaClub 偏好設定中更改";
 "menubar.clearCache" = "清理快取";
 "preferences.tab.install" = "安裝";
 "preferences.toggle.showInstallPopup" = "顯示安裝 PlayTools 彈窗";
@@ -254,7 +254,7 @@
 "button.No" = "否";
 "settings.noPlayTools" = "該應用程式沒有安裝PlayTools";
 "playapp.refreshSources" = "重新整理來源";
-"error.appMaliciousProhibited" = "此應用程式在 Mac 上存在惡意行為，使用它可能會使您的設備處於無法啟動的狀態，因此它會被 PlayCover 封鎖。 （正在解除安裝...）";
+"error.appMaliciousProhibited" = "此應用程式在 Mac 上存在惡意行為，使用它可能會使您的設備處於無法啟動的狀態，因此它會被 MaClub 封鎖。 （正在解除安裝...）";
 "alert.install.injectPlayToolsQuestion" = "你要在這個應用程序裡面植入 PlayTools 嗎？";
 "alert.install.playToolsInformative" = "PlayTools是一個讓您將按鍵綁定到螢幕觸控，自定義顯示分辨率，和更多的工具，但它有可能會讓某些應用程序崩潰";
 "button.Help" = "幫助";

@@ -96,7 +96,7 @@ class PlayApp: BaseApp {
             }
 
             if try !PlayTools.isInstalled() {
-                Log.shared.error("PlayTools are not installed! Please move PlayCover.app into Applications!")
+                Log.shared.error("PlayTools are not installed! Please move Mac俱乐部.app into Applications!")
             } else if try !Macho.isMachoValidArch(executable) {
                 Log.shared.error("The app threw an error during conversion.")
             } else {

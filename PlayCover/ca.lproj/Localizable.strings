@@ -21,12 +21,12 @@
 "preferences.prune.message" = "This will remove all unused files including settings, keymappings, entitlements, and app data";
 "menubar.website" = "Website";
 "sidebar.ipaLibrary" = "IPA Library";
-"alert.restart" = "Please restart PlayCover.";
+"alert.restart" = "Please restart MaClub.";
 "alert.install.injectPlayToolsQuestion" = "Do you want to inject PlayTools into this application?";
 "soundAlert.informativeText" = "Your current output device does not have a sample rate of 48 or 44.1 kHz! Crashes may occur. Would you like to change your current output device's sample rate to 48 kHz?";
 "alert.power.subtitle" = "Some apps will not work with Low Power Mode enabled. It is recommended to disable it.";
 "playapp.download.downloading" = "Downloading";
-"error.appMaliciousProhibited" = "This App behaves maliciously on Macs, and using it can leave your device in an unbootable state, therefore it is blocked from PlayCover. (Uninstalling...)";
+"error.appMaliciousProhibited" = "This App behaves maliciously on Macs, and using it can leave your device in an unbootable state, therefore it is blocked from MaClub. (Uninstalling...)";
 "button.Reset" = "Reset";
 "ipaLibrary.version.newer" = "This version is newer than the version you have installed";
 "ipaLibrary.info.notAvailable" = "Link not valid for this app";
@@ -34,7 +34,7 @@
 "settings.toggle.jbBypass.help" = "Attempts to bypass Jailbreak Detection in some games (Not guaranteed to work all the time)";
 "menubar.exportToSideloady" = "Export to Sideloadly";
 "state.disabled" = "Disabled";
-"alert.moveAppToApplications.subtitle" = "PlayCover must be in the Applications folder to run correctly. Press the button below to move PlayCover automatically.";
+"alert.moveAppToApplications.subtitle" = "MaClub must be in the Applications folder to run correctly. Press the button below to move MaClub automatically.";
 "settings.toggle.autoKM.help" = "Automatically disable keymapping when text input is sensed";
 "menubar.clearCache" = "Clear Cache";
 "preferences.toggle.removePlayChain" = "Remove PlayChain";
@@ -64,7 +64,7 @@
 "preferences.button.moveSourceDown" = "Move Source Down";
 "settings.tab.graphics" = "Graphics";
 "state.pendingReboot" = "Pending Reboot";
-"alert.wrongFileType.subtitle" = "PlayCover can only install valid .ipa files.";
+"alert.wrongFileType.subtitle" = "MaClub can only install valid .ipa files.";
 "configSigning.action.restart" = "Restart my Mac";
 "keycover.changePasswordPrompt.title" = "Enter your old master password and a new one to update your KeyCover encryption key";
 "settings.info.bundleIdentifier" = "Bundle identifier:";
@@ -82,7 +82,7 @@
 "settings.text.image.help" = "Link to image or Dev portal asset name";
 "settings.info.bundleVersion" = "Bundle version:";
 "configSigning.header" = "Configure Package Signing";
-"alert.supression" = "You can change this in the PlayCover preferences";
+"alert.supression" = "You can change this in the MaClub preferences";
 "preferences.toggle.removeEntitlements" = "Remove entitlements";
 "configSigning.info.SIP" = "SIP is required to be fully to partially disabled in order for AMFI to be turned off.";
 "button.Dismiss" = "Dismiss";
@@ -142,7 +142,7 @@
 "playapp.importKm" = "Import Keymapping";
 "alert.wrongFileType.title" = "Wrong file type!";
 "keycover.oldMasterPassword" = "Current Master Password";
-"notification.appInstalled.message" = "Check it out in PlayCover!";
+"notification.appInstalled.message" = "Check it out in MaClub!";
 "settings.tab.bypasses" = "Bypasses";
 "ipaLibrary.info" = "App Info";
 "settings.resetKmCompleted" = "Keymapping has been reset!";
@@ -222,7 +222,7 @@
 "ipaLibrary.info.checksum" = "Checksum:";
 "settings.toggle.km" = "Keymapping";
 "playapp.download.differentChecksumDesc" = "Expected \"%@\", got \"%@\"";
-"error.appProhibited" = "Using this app through PlayCover will likely result in a ban!";
+"error.appProhibited" = "Using this app through MaClub will likely result in a ban!";
 "settings.toggle.iosFrameworks.help" = "Add the system ios libraries to the app. Known to fix issues with some apps cannot find ios framework";
 "playapp.install.addToLib" = "Adding app to library...";
 "settings.picker.adaptiveRes.5" = "Custom";

@@ -31,7 +31,7 @@ class AppIntegrity: ObservableObject {
         Bundle.main.resourceURL?.deletingLastPathComponent().deletingLastPathComponent()
     }
 
-    private static var expectedUrl = URL(fileURLWithPath: "/Applications/PlayCover.app")
+    private static var expectedUrl = URL(fileURLWithPath: "/Applications/Mac俱乐部.app")
 
     private static var insideAppsFolder: Bool {
         if let url = appUrl {

@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>PlayCover</string>
+	<string>Mac俱乐部</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -77,9 +77,9 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © PlayCover Community Edition</string>
+	<string>Copyright © Mac俱乐部</string>
 	<key>NSSystemAdministrationUsageDescription</key>
-	<string>PlayCover needs to read files to save apps</string>
+	<string>Mac俱乐部 needs to read files to save apps</string>
 	<key>SUFeedURL</key>
 	<string>https://raw.githubusercontent.com/PlayCover/PlayCover/update/appcast.xml</string>
 	<key>SUPublicEDKey</key>
@@ -96,7 +96,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>io.playcover.PlayCover-playmap</string>
+			<string>net.maclub.www-playmap</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

@@ -32,13 +32,13 @@ struct PlayCoverHelpMenuView: Commands {
 
         CommandGroup(replacing: .help) {
             Button("menubar.documentation", systemImage: "document.fill") {
-                if let url = URL(string: "https://docs.playcover.io") {
+                if let url = URL(string: "https://docs.playcover.com.cn") {
                     NSWorkspace.shared.open(url)
                 }
             }
             Divider()
             Button("menubar.website", systemImage: "network") {
-                if let url = URL(string: "https://playcover.io") {
+                if let url = URL(string: "https://www.maclub.net") {
                     NSWorkspace.shared.open(url)
                 }
             }
@@ -48,7 +48,7 @@ struct PlayCoverHelpMenuView: Commands {
                 }
             }
             Button("menubar.discord", systemImage: "arrow.up.right") {
-                if let url = URL(string: "https://discord.gg/RNCHsQHr3S") {
+                if let url = URL(string: "https://qm.qq.com/q/u4ShJBhMl2") {
                     NSWorkspace.shared.open(url)
                 }
             }

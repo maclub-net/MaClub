@@ -20,7 +20,7 @@
 "alert.moveAppToApplications.move" = "Déplacer vers le dossier d'applications";
 
 /* (No Comment) */
-"alert.restart" = "Veuillez redémarrer PlayCover.";
+"alert.restart" = "Veuillez redémarrer MaClub.";
 
 /* (No Comment) */
 "alert.success" = "Succès";
@@ -198,10 +198,10 @@
 "playapp.exportKmPanel.fieldLabel" = "Nom du PlayMap :";
 "sidebar.ipaLibrary" = "Bibliothèque d'IPAs";
 "alert.moveAppToApplications.title" = "Déplacer vers le dossier d'applications ?";
-"alert.moveAppToApplications.subtitle" = "PlayCover doit être dans le dossier d'applications pour fonctionner. Appuyez sur le bouton en dessous pour déplacer PlayCover automatiquement.";
+"alert.moveAppToApplications.subtitle" = "MaClub doit être dans le dossier d'applications pour fonctionner. Appuyez sur le bouton en dessous pour déplacer MaClub automatiquement.";
 "error.appEncrypted" = "Cet application est chiffré ! Veuillez utiliser une IPA déchiffré. Des IPA de iMazing ne sont pas supportés !";
 "error.appCorrupted" = "Quelque chose est passé avec cette IPA. Veuillez utiliser un autre IPA.";
-"error.appProhibited" = "L'utilisation de cette application via PlayCover entraînera probablement une ban !";
+"error.appProhibited" = "L'utilisation de cette application via MaClub entraînera probablement une ban !";
 "settings.tab.info" = "Info";
 "settings.tab.km" = "Touches";
 "settings.toggle.km.help" = "Ajoutez le mappage de touches aux jeux tactiles uniquement. Utilisez Commande + K pour ouvrir le menu de l'éditeur.";
@@ -234,7 +234,7 @@
 "settings.text.detectedResolution" = "Résolution détectée :";
 "playapp.add" = "Ajouter une application";
 "alert.wrongFileType.title" = "Mauvais type de fichier !";
-"alert.wrongFileType.subtitle" = "PlayCover ne peut installer que des fichiers .ipa valides.";
+"alert.wrongFileType.subtitle" = "MaClub ne peut installer que des fichiers .ipa valides.";
 "playapp.addSource" = "Ajouter une source";
 "ipaLibrary.noSources.title" = "Aucune source IPA ajoutée";
 "ipaLibrary.noSources.subtitle" = "Vous n'avez actuellement aucune source IPA ajoutée. Cliquez sur le bouton ci-dessous pour en ajouter.";
@@ -262,7 +262,7 @@
 "preferences.prune.alert" = "Voulez-vous vraiment supprimer tous les fichiers ?";
 "preferences.prune.message" = "Cela supprimera tous les fichiers inutilisés, y compris les paramètres, le mappage de touches, les autorisations et les données d'application";
 "playapp.progress.failed" = "Échoué";
-"alert.supression" = "Vous pouvez modifier cela dans les préférences PlayCover";
+"alert.supression" = "Vous pouvez modifier cela dans les préférences MaClub";
 "menubar.clearCache" = "Effacer le cache";
 "preferences.tab.install" = "Installer";
 "alert.install.injectPlayTools" = "Injecter PlayTools";
@@ -274,7 +274,7 @@
 "settings.removePlayTools" = "Supprimer PlayTools";
 "settings.info.playTools" = "PlayTools installé :";
 "playapp.refreshSources" = "Actualiser les sources";
-"error.appMaliciousProhibited" = "Cette application se comporte de manière malveillante sur les Mac et son utilisation peut laisser votre ordinateur dans un état non démarrable, elle est donc bloqué de PlayCover. (Désinstallation...)";
+"error.appMaliciousProhibited" = "Cette application se comporte de manière malveillante sur les Mac et son utilisation peut laisser votre ordinateur dans un état non démarrable, elle est donc bloqué de MaClub. (Désinstallation...)";
 "alert.install.injectPlayToolsQuestion" = "Voulez-vous injecter PlayTools dans cette application ?";
 "alert.install.playToolsInformative" = "PlayTools est un outil qui permet le mappage de touches, changement de résolution d'affichage et plus, mais elle peut briser certaines applications";
 "button.Help" = "Aide";

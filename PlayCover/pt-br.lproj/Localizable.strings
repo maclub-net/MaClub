@@ -4,7 +4,7 @@
 "playapp.clearCache" = "Excluir dados do aplicativo";
 "playapp.importKm" = "Importar mapeamento de teclas";
 "playapp.exportKm" = "Exportar mapeamento de teclas";
-"playapp.exportKmPanel.fieldLabel" = "Nome do PlayMap:";
+"playapp.exportKmPanel.fieldLabel" = "Nome do MaMap:";
 "playapp.delete" = "Desinstalar aplicativo";
 "playapp.deleteConfirm" = "Desinstalar";
 "playapp.deleteMessage" = "Tem certeza de que deseja desinstalar %@?";
@@ -26,11 +26,11 @@
 "alert.errorImportKm" = "Ocorreu um erro ao importar!";
 "alert.app.delete" = "Todos os dados do aplicativo serão excluídos. Pode ser necessário baixar os arquivos do aplicativo novamente. Deseja continuar?";
 "alert.app.preferences" = "Todas as configurações feitas dentro do aplicativo serão excluídas. Deseja continuar?";
-"alert.restart" = "Por favor reinicie o PlayCover.";
+"alert.restart" = "Por favor reinicie o MaClub.";
 "alert.error" = "Ocorreu um erro!";
 "alert.success" = "Sucesso";
 "alert.moveAppToApplications.title" = "Mover para a pasta Aplicativos?";
-"alert.moveAppToApplications.subtitle" = "O PlayCover precisa estar na pasta Aplicativos para funcionar corretamente. Pressione o botão abaixo para mover o PlayCover automaticamente.";
+"alert.moveAppToApplications.subtitle" = "O MaClub precisa estar na pasta Aplicativos para funcionar corretamente. Pressione o botão abaixo para mover o MaClub automaticamente.";
 "alert.moveAppToApplications.move" = "Mover para a pasta Aplicativos";
 "alert.legacyImport.title" = "Configurações de aplicativo legadas detectadas!";
 "alert.legacyImport.subtitle" = "Arquivos de configuração e mapeamento de teclas legados foram detectados. Gostaria de converter esses arquivos para o novo formato?";
@@ -45,7 +45,7 @@
 "error.waitInstallation" = "Por favor, espere a instalação atual terminar!";
 "error.appEncrypted" = "Este aplicativo está criptografado! Por favor, use um IPA descriptografado. IPAs iMazing não são compatíveis!";
 "error.appCorrupted" = "Alguma coisa deu errado com esse IPA. Por favor, tente usar outro arquivo IPA.";
-"error.appProhibited" = "Você pode ser banido deste aplicativo por utilizá-lo pelo PlayCover!";
+"error.appProhibited" = "Você pode ser banido deste aplicativo por utilizá-lo pelo MaClub!";
 "menubar.exportToSideloady" = "Exportar para o Sideloadly";
 "settings.title" = "Configurações para %@";
 "settings.tab.info" = "Informações";
@@ -80,7 +80,7 @@
 "settings.resetSettingsCompleted" = "As configurações foram redefinidas para o padrão!";
 "settings.resetKmCompleted" = "Mapeamento de teclas redefinido!";
 "notification.appInstalled" = "Aplicativo instalado!";
-"notification.appInstalled.message" = "Confira no PlayCover!";
+"notification.appInstalled.message" = "Confira no MaClub!";
 "menubar.log.copy" = "Copiar Logs";
 "menubar.documentation" = "Documentação";
 "menubar.website" = "Website";
@@ -105,7 +105,7 @@
 "settings.toggle.hud" = "HUD Metal";
 "playapp.add" = "Adicionar aplicativo";
 "alert.wrongFileType.title" = "Tipo de arquivo incorreto!";
-"alert.wrongFileType.subtitle" = "O PlayCover pode instalar somente arquivos .ipa válidos.";
+"alert.wrongFileType.subtitle" = "O MaClub pode instalar somente arquivos .ipa válidos.";
 "playapp.addSource" = "Adicionar fonte";
 "ipaLibrary.noSources.title" = "Nenhuma fonte de IPA adicionada";
 "ipaLibrary.noSources.subtitle" = "Atualmente não há nenhuma fonte de IPA adicionada. Clique no botão abaixo para adicionar uma.";
@@ -133,7 +133,7 @@
 "preferences.prune.alert" = "Tem certeza de que deseja excluir todos os arquivos?";
 "preferences.prune.message" = "Isso irá excluir todos os arquivos não utilizados, incluindo configurações, mapeamento de teclas, permissões e dados do aplicativo";
 "playapp.progress.failed" = "Erro";
-"alert.supression" = "Isso pode ser alterado nas configurações do PlayCover";
+"alert.supression" = "Isso pode ser alterado nas configurações do MaClub";
 "menubar.clearCache" = "Excluir cache";
 "button.No" = "Não";
 "preferences.tab.install" = "Instalação";
@@ -145,7 +145,7 @@
 "settings.removePlayTools" = "Remover PlayTools";
 "settings.info.playTools" = "PlayTools instalado:";
 "playapp.refreshSources" = "Atualizar Fontes";
-"error.appMaliciousProhibited" = "Esse aplicativo se comporta maliciosamente em Macs e pode deixar seu dispositivo em um estado não-funcional; portanto, ele está bloqueado no PlayCover. (Desinstalando...)";
+"error.appMaliciousProhibited" = "Esse aplicativo se comporta maliciosamente em Macs e pode deixar seu dispositivo em um estado não-funcional; portanto, ele está bloqueado no MaClub. (Desinstalando...)";
 "alert.install.injectPlayToolsQuestion" = "Tem certeza de que deseja injetar o PlayTools nessa aplicação?";
 "alert.install.playToolsInformative" = "O PlayTools é uma ferramenta que permite mapear teclas para toques na tela, resoluções de exibição personalizados e mais, mas alguns aplicativos podem deixar de funcionar";
 "button.Help" = "Ajuda";
@@ -182,10 +182,10 @@
 "alert.differentBundleIdKeymap.message" = "Esse mapeamento de teclas foi criado para outra aplicação.";
 "alert.differentBundleIdKeymap.text" = "Tem certeza de que deseja importar esse mapeamento?";
 "settings.unavailable.hud" = "HUD Metal indisponível";
-"settings.playChain.enable" = "Habilitar PlayChain (experimental)";
+"settings.playChain.enable" = "Habilitar MaChain (experimental)";
 "error.failedToStripBinary" = "Não foi possível encontrar um binário ARM64 no arquivo universal!";
-"settings.playChain.help" = "Habilitar suporte ao PlayChain para essa aplicação, permitindo-o que use (parcialmente) os serviços de Keychain da Apple";
-"settings.playChain.debugging" = "Depuração do PlayChain";
+"settings.playChain.help" = "Habilitar suporte ao MaChain para essa aplicação, permitindo-o que use (parcialmente) os serviços de Keychain da Apple";
+"settings.playChain.debugging" = "Depuração do MaChain";
 "playapp.noSources.title" = "Nenhum IPA instalado";
 "playapp.noSources.subtitle" = "Você atualmente não possui nenhum IPA instalado. Clique no botão abaixo para importar um.";
 "settings.tab.bypasses" = "Bypasses";
@@ -195,11 +195,11 @@
 "playapp.progress.canceled" = "Cancelado";
 "playapp.importIPA" = "Importar IPA";
 "button.Reload" = "Recarregar";
-"playapp.clearPlayChain" = "Excluir dados do PlayChain";
+"playapp.clearPlayChain" = "Excluir dados do MaChain";
 "ipaLibrary.noNetworkConnection.required" = "Biblioteca de IPA requer conexão à internet";
-"preferences.toggle.removePlayChain" = "Remover PlayChain";
+"preferences.toggle.removePlayChain" = "Remover MaChain";
 "preferences.popover.duplicate" = "Duplicar Link";
-"alert.app.clearPlayChain" = "Todos os dados do PlayChain serão apagados. Pode ser necessário precisar fazer login no aplicativo de novo. Deseja continuar?";
+"alert.app.clearPlayChain" = "Todos os dados do MaChain serão apagados. Pode ser necessário precisar fazer login no aplicativo de novo. Deseja continuar?";
 "settings.highResolution" = "Alta resolução pode causar falhas";
 "settings.picker.windowFix" = "Corrigir problemas de exibição da janela";
 "settings.picker.windowFixMethod.0" = "Normal";
@@ -228,7 +228,7 @@
 "keycover.button.lockAll" = "Lock All Chains";
 "keycover.button.changePassword" = "Change Master Password";
 "keycover.toggle.startupPrompt" = "Prompt for KeyCover at startup";
-"keycover.toggle.startupPrompt.help" = "KeyCover will prompt for your master password when you launch the application. If this is disabled, it will be prompted when you launch an app that uses PlayChain.";
+"keycover.toggle.startupPrompt.help" = "KeyCover will prompt for your master password when you launch the application. If this is disabled, it will be prompted when you launch an app that uses MaChain.";
 "keycover.setup.useGeneratedKey" = "Managed Automatically";
 "keycover.setup.useUserKey" = "Use my own key";
 "keycover.setup.encryptionKey" = "Encryption Key: ";

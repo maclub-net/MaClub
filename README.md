@@ -1,11 +1,6 @@
 <div id="top"></div>
 
-‎<h1 align="center">[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![GPLv3 License][license-shield]][license-url]
-[![Weblate](https://img.shields.io/weblate/progress/playcover?style=for-the-badge)](https://hosted.weblate.org/projects/playcover/playcover/)
+‎<h1 align="center">[![GPLv3 License][license-shield]][license-url]
 </h1>
 
 
@@ -13,38 +8,25 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/PlayCover/PlayCover">
+  <a href="https://github.com/maclub-net/MaClub">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">PlayCover</h3>
+  <h3 align="center">Mac俱乐部</h3>
 
   <p align="center">
-    Run iOS apps and games on Apple Silicon Macs with mouse, keyboard and controller support.
+    基于PlayCover二次开发的iOS应用和游戏运行工具，支持Apple Silicon Macs，提供鼠标、键盘和控制器支持。
     <br />
     <br />
-    <a href="https://playcover.github.io/PlayBook">Documentation</a>
-    ·
-    <a href="https://discord.gg/RNCHsQHr3S">Discord</a>
-    ·
-    <a href="https://playcover.io/">Website</a>
   </p>
 </div>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Welcome to PlayCover! This software is all about allowing you to run iOS apps and games on Apple Silicon devices running macOS 12.0 or newer.
+Mac俱乐部是基于PlayCover二次开发的软件，允许在运行macOS 12.0或更新版本的Apple Silicon设备上运行iOS应用和游戏。
 
-PlayCover works by putting applications through a wrapper which imitates an iPad. This allows the apps to run natively and perform very well.
-
-PlayCover also allows you to map custom touch controls to keyboard, which is not possible in alternative sideloading methods such as Sideloadly. 
-
-These controls include all the essentials, from WASD, camera movement, left and right clicks, and individual keymapping, similar to a popular Android emulator’s keymapping system called Bluestacks.
-
-This software was originally designed to run Genshin Impact on your Apple Silicon device, but it can now run a wide range of applications. Unfortunately, not all games are supported, and some may have bugs.
-
-Localisations handled in [Weblate](https://hosted.weblate.org/projects/playcover/).
+本项目遵循GPLv3开源协议，基于原始PlayCover项目进行开发和改进。
 
 ![Fancy logo](./images/dark.png#gh-dark-mode-only)
 ![Fancy logo](./images/light.png#gh-light-mode-only)

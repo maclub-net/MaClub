@@ -20,7 +20,7 @@
 "alert.moveAppToApplications.move" = "Pindah ke folder aplikasi";
 
 /* (No Comment) */
-"alert.restart" = "Mohon mulai ulang PlayCover.";
+"alert.restart" = "Mohon mulai ulang MaClub.";
 
 /* (No Comment) */
 "alert.success" = "Berhasil";
@@ -71,7 +71,7 @@
 "notification.appInstalled" = "Aplikasi terpasang!";
 
 /* (No Comment) */
-"notification.appInstalled.message" = "Lihat di PlayCover!";
+"notification.appInstalled.message" = "Lihat di MaClub!";
 
 /* (No Comment) */
 "playapp.clearCache" = "Hapus data app";
@@ -192,15 +192,15 @@
 
 /* (No Comment) */
 "settings.tab.misc" = "Lain-lain";
-"playapp.exportKmPanel.fieldLabel" = "nama PetaMain:";
+"playapp.exportKmPanel.fieldLabel" = "nama MaMap:";
 "sidebar.appLibrary" = "Perpustakaan aplikasi";
 "sidebar.ipaLibrary" = "Perpustakaan IPA";
 "alert.moveAppToApplications.title" = "Pindah ke folder aplikasi?";
-"alert.moveAppToApplications.subtitle" = "PlayCover harus berada di folder aplikasi agar dapat berjalan dengan benar. Tekan tombol di bawah untuk memindahkan PlayCover secara otomatis.";
+"alert.moveAppToApplications.subtitle" = "MaClub harus berada di folder aplikasi agar dapat berjalan dengan benar. Tekan tombol di bawah untuk memindahkan MaClub secara otomatis.";
 "button.Quit" = "Keluar";
 "error.appEncrypted" = "Aplikasi ini dienkripsi! Harap gunakan IPA yang didekripsi. iMazing IPA tidak didukung!";
 "error.appCorrupted" = "Ada yang salah dengan IPA ini. Coba gunakan file IPA lain.";
-"error.appProhibited" = "Menggunakan aplikasi ini melalui PlayCover kemungkinan akan mengakibatkan ban!";
+"error.appProhibited" = "Menggunakan aplikasi ini melalui MaClub kemungkinan akan mengakibatkan ban!";
 "settings.title" = "Pengaturan";
 "settings.tab.info" = "Informasi";
 "settings.tab.km" = "Pemetaan kontrol";
@@ -234,7 +234,7 @@
 "settings.text.detectedResolution" = "Resolusi terdeteksi:";
 "playapp.add" = "Tambah Aplikasi";
 "alert.wrongFileType.title" = "Jenis file salah!";
-"alert.wrongFileType.subtitle" = "PlayCover hanya dapat menginstal file .ipa yang valid.";
+"alert.wrongFileType.subtitle" = "MaClub hanya dapat menginstal file .ipa yang valid.";
 "playapp.addSource" = "Tambah sumber";
 "ipaLibrary.noSources.title" = "Tidak ada sumber IPA ditambahkan";
 "ipaLibrary.noSources.subtitle" = "Anda tidak memiliki sumber IPA yang ditambahkan. Klik tombol di bawah untuk menambahkan satu.";
@@ -262,7 +262,7 @@
 "preferences.prune.alert" = "Apakah anda yakin ingin memangkas semua file?";
 "preferences.prune.message" = "Ini akan menghapus semua file yang tidak digunakan termasuk pengaturan, pemetaan kontrol, hak, dan data aplikasi";
 "playapp.progress.failed" = "Gagal";
-"alert.supression" = "Anda dapat mengubah ini di preferensi PlayCover";
+"alert.supression" = "Anda dapat mengubah ini di preferensi MaClub";
 "menubar.clearCache" = "Hapus data gambar";
 "alert.install.injectPlayTools" = "Masukkan PlayTools";
 "preferences.tab.install" = "Install";
@@ -274,7 +274,7 @@
 "settings.removePlayTools" = "Hapus PlayTools";
 "settings.info.playTools" = "PlayTools terpasang:";
 "playapp.refreshSources" = "Menyegarkan sumber";
-"error.appMaliciousProhibited" = "Aplikasi ini berperilaku dengan jahat di Mac, dan menggunakannya dapat membuat perangkat Anda tidak dapat dinyalakan, oleh karena itu diblokir dari PlayCover. (Menghapus Instalan...)";
+"error.appMaliciousProhibited" = "Aplikasi ini berperilaku dengan jahat di Mac, dan menggunakannya dapat membuat perangkat Anda tidak dapat dinyalakan, oleh karena itu diblokir dari MaClub. (Menghapus Instalan...)";
 "alert.install.injectPlayToolsQuestion" = "Apakah Anda ingin menyuntikkan PlayTools ke dalam aplikasi ini?";
 "alert.install.playToolsInformative" = "PlayTools adalah alat yang memungkinkan Anda untuk mengikat tombol ke sentuhan layar, resolusi tampilan khusus, dan banyak lagi, tetapi dapat merusak aplikasi tertentu";
 "button.Help" = "Bantuan";
@@ -311,9 +311,9 @@
 "settings.toggle.lldb" = "Open with LLDB";
 "settings.toggle.lldbWithTerminal" = "Open in terminal";
 "settings.unavailable.hud" = "Metal HUD unavailable";
-"settings.playChain.enable" = "Enable PlayChain (experimental)";
-"settings.playChain.help" = "Enable PlayChain support for this application, allowing it to (partially) use Apple Keychain Services";
-"settings.playChain.debugging" = "PlayChain debugging";
+"settings.playChain.enable" = "Enable MaChain (experimental)";
+"settings.playChain.help" = "Enable MaChain support for this application, allowing it to (partially) use Apple Keychain Services";
+"settings.playChain.debugging" = "MaChain debugging";
 "error.failedToStripBinary" = "Tidak dapat menemukan arsitektur ARM64 dalam fat binary!";
 "playapp.noSources.title" = "Tidak ada IPA yang Diinstal";
 "playapp.noSources.subtitle" = "Saat ini Anda belum memiliki IPA yang terinstal. Klik tombol di bawah ini untuk mengimpornya.";
@@ -324,10 +324,10 @@
 "playapp.progress.canceled" = "Dibatalkan";
 "playapp.importIPA" = "Impor IPA";
 "ipaLibrary.noNetworkConnection.required" = "IPA Library membutuhkan koneksi internet";
-"preferences.toggle.removePlayChain" = "Hapus PlayChain";
+"preferences.toggle.removePlayChain" = "Hapus MaChain";
 "preferences.popover.duplicate" = "Tautan Duplikat";
-"playapp.clearPlayChain" = "Bersihkan Data PlayChain";
-"alert.app.clearPlayChain" = "Semua data PlayChain akan dihapus. Anda mungkin perlu masuk ke aplikasi lagi. Apakah Anda ingin melanjutkan?";
+"playapp.clearPlayChain" = "Bersihkan Data MaChain";
+"alert.app.clearPlayChain" = "Semua data MaChain akan dihapus. Anda mungkin perlu masuk ke aplikasi lagi. Apakah Anda ingin melanjutkan?";
 "button.Reload" = "Muat ulang";
 "settings.highResolution" = "High resolution may cause crashing";
 "settings.picker.windowFix" = "Fix window display issues";
@@ -358,7 +358,7 @@
 "keycover.button.lockAll" = "Lock All Chains";
 "keycover.button.changePassword" = "Change Master Password";
 "keycover.toggle.startupPrompt" = "Prompt for KeyCover at startup";
-"keycover.toggle.startupPrompt.help" = "KeyCover will prompt for your master password when you launch the application. If this is disabled, it will be prompted when you launch an app that uses PlayChain.";
+"keycover.toggle.startupPrompt.help" = "KeyCover will prompt for your master password when you launch the application. If this is disabled, it will be prompted when you launch an app that uses MaChain.";
 "keycover.setup.useGeneratedKey" = "Managed Automatically";
 "keycover.setup.useUserKey" = "Use my own key";
 "keycover.setup.encryptionKey" = "Encryption Key: ";

@@ -20,7 +20,7 @@
 "alert.moveAppToApplications.move" = "Переместить в папку Приложения (Applications)";
 
 /* (No Comment) */
-"alert.restart" = "Пожалуйста перезапустите PlayCover.";
+"alert.restart" = "Пожалуйста перезапустите MaClub.";
 
 /* (No Comment) */
 "alert.success" = "Успешно";
@@ -71,7 +71,7 @@
 "notification.appInstalled" = "Приложение установлено!";
 
 /* (No Comment) */
-"notification.appInstalled.message" = "Проверьте в PlayCover!";
+"notification.appInstalled.message" = "Проверьте в MaClub!";
 
 /* (No Comment) */
 "playapp.clearCache" = "Очистить данные приложения";
@@ -196,10 +196,10 @@
 "button.Quit" = "Выйти";
 "sidebar.ipaLibrary" = "Библиотека IPA";
 "alert.moveAppToApplications.title" = "Переместить в папку Applications (Программы)?";
-"alert.moveAppToApplications.subtitle" = "Для корректной работы PlayCover должен находиться в папке Applications (Программы). Нажмите на кнопку ниже, чтобы переместить PlayCover автоматически.";
+"alert.moveAppToApplications.subtitle" = "Для корректной работы MaClub должен находиться в папке Applications (Программы). Нажмите на кнопку ниже, чтобы переместить MaClub автоматически.";
 "error.appEncrypted" = "Это приложение зашифровано! Пожалуйста, используйте расшифрованные файлы IPA. Файлы IPA из iMazing не поддерживаются!";
 "error.appCorrupted" = "С данным IPA что-то пошло не так. Пожалуйста, попробуйте другой файл IPA.";
-"error.appProhibited" = "Использование этого приложения через PlayCover скорее всего приведет к бану!";
+"error.appProhibited" = "Использование этого приложения через MaClub скорее всего приведет к бану!";
 "settings.title" = "Настройки %@";
 "settings.tab.info" = "Информация";
 "settings.tab.km" = "Раскладка клавиатуры";
@@ -234,7 +234,7 @@
 "settings.text.detectedResolution" = "Обнаруженное разрешение:";
 "playapp.add" = "Добавить приложение";
 "alert.wrongFileType.title" = "Неверный тип файла!";
-"alert.wrongFileType.subtitle" = "PlayCover может установить только корректные .ipa файлы.";
+"alert.wrongFileType.subtitle" = "MaClub может установить только корректные .ipa файлы.";
 "playapp.addSource" = "Добавить источник";
 "ipaLibrary.noSources.title" = "Не добавлено ни одного источника IPA";
 "ipaLibrary.noSources.subtitle" = "Не добавлено ни одного источника IPA. Нажмите кнопку ниже, чтобы добавить.";
@@ -263,7 +263,7 @@
 "preferences.prune.alert" = "Вы уверены, что хотите удалить все файлы?";
 "preferences.prune.message" = "Данное действие удалит все не используемые файлы, включая настройки, раскладки, разрешения и данные приложения";
 "playapp.progress.failed" = "Произошла ошибка";
-"alert.supression" = "Вы можете изменить это в настройках PlayCover";
+"alert.supression" = "Вы можете изменить это в настройках MaClub";
 "alert.install.injectPlayTools" = "Внедрить PlayTools";
 "button.Yes" = "Да";
 "button.No" = "Нет";
@@ -274,7 +274,7 @@
 "settings.removePlayTools" = "Удалить PlayTools";
 "settings.info.playTools" = "PlayTools установлен:";
 "playapp.refreshSources" = "Обновить источники";
-"error.appMaliciousProhibited" = "Это приложение вредоносно для Mac. Используя его, вы можете привести свое устройство в незагружаемое состояние, поэтому оно заблокировано в PlayCover. (Удаляется...)";
+"error.appMaliciousProhibited" = "Это приложение вредоносно для Mac. Используя его, вы можете привести свое устройство в незагружаемое состояние, поэтому оно заблокировано в MaClub. (Удаляется...)";
 "alert.install.injectPlayToolsQuestion" = "Вы хотите внедрить PlayTools в это приложение?";
 "alert.install.playToolsInformative" = "PlayTools – это инструмент, позволяющий связывать нажатия клавиш с жестами экрана, устанавливать собственное разрешение экрана и т.д., однако он может нарушить корректную работу некоторых приложений";
 "button.Help" = "Помощь";
@@ -357,7 +357,7 @@
 "keycover.button.lockAll" = "Заблокировать все цепочки";
 "keycover.button.changePassword" = "Сменить мастер-пароль";
 "keycover.toggle.startupPrompt" = "Запрашивать KeyCover при запуске";
-"keycover.toggle.startupPrompt.help" = "KeyCover будет запрашивать ваш мастер-пароль при запуске этого приложения. Если отключено, тогда будет запрашиваться при запуске приложения, использующего PlayChain.";
+"keycover.toggle.startupPrompt.help" = "KeyCover будет запрашивать ваш мастер-пароль при запуске этого приложения. Если отключено, тогда будет запрашиваться при запуске приложения, использующего MaChain.";
 "keycover.setup.useGeneratedKey" = "Управляется автоматически";
 "keycover.setup.useUserKey" = "Использовать мой собственный ключ";
 "keycover.setup.encryptionKey" = "Ключ шифрования: ";

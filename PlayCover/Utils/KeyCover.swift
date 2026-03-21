@@ -181,7 +181,7 @@ struct KeyCoverKey {
 class KeyCoverPassword {
     static let shared = KeyCoverPassword()
 
-    let tag = "io.playcover.masterkey"
+    let tag = "net.maclub.masterkey"
 
     func setKeyCoverPassword(_ key: String) {
         // swiftlint: disable force_unwrapping

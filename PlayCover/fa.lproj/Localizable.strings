@@ -18,7 +18,7 @@
 "alert.errorImportKm" = "خطائی در زمان درون‌ریزی رخ داد!";
 "alert.app.delete" = "تمامی داده‌های درون برنامه پاک خواهند شد. ممکن است نیاز باشد که دوباره آن‌ها را دریافت کنید. ادامه می‌دهید؟";
 "alert.app.preferences" = "تمامی پیکربندی‌های درون برنامه‌ای انجام‌شده، پاک خواهند شد؛ آیا مایل به ادامه دادن هستید؟";
-"alert.restart" = "لطفا PlayCover را از نو راه‌اندازی (Restart) کنید.";
+"alert.restart" = "لطفا MaClub را از نو راه‌اندازی (Restart) کنید.";
 "alert.error" = "خطائی رخ داد!";
 "alert.success" = "انجام شد";
 "alert.moveAppToApplications.move" = "انتقال به پوشه Applications مک";
@@ -36,7 +36,7 @@
 "settings.picker.iosDevice" = "شبیه‌ساز:";
 "settings.slider.mouseSensitivity" = "میزان حساسیت ماوس: %.f";
 "notification.appInstalled" = "برنامه نصب شد!";
-"notification.appInstalled.message" = "آن را در PlayCover می‌توانید مشاهده کنید!";
+"notification.appInstalled.message" = "آن را در MaClub می‌توانید مشاهده کنید!";
 "menubar.log.copy" = "رونوشت‌گیری از گزارش عمل‌کرد";
 "menubar.documentation" = "مستندات";
 "menubar.website" = "وب‌گاه";
@@ -64,11 +64,11 @@
 "playapp.exportKmPanel.fieldLabel" = "نام PlayMap:";
 "sidebar.appLibrary" = "کتابخانه نصب‌شده‌ها";
 "sidebar.ipaLibrary" = "کتابخانه پرونده‌های IPA";
-"alert.moveAppToApplications.title" = "PlayCover در پوشه‌ی Applications مک قرار ندارد؟";
-"alert.moveAppToApplications.subtitle" = "برنامه PlayCover برای این که به درستی کار کند می‌بایست در پوشه Applications مک قرار داشته باشد. برای انتقال خودکار PlayCover به آن پوشه، بر روی دکمه‌ی زیر کلیک کنید.";
+"alert.moveAppToApplications.title" = "MaClub در پوشه‌ی Applications مک قرار ندارد؟";
+"alert.moveAppToApplications.subtitle" = "برنامه MaClub برای این که به درستی کار کند می‌بایست در پوشه Applications مک قرار داشته باشد. برای انتقال خودکار MaClub به آن پوشه، بر روی دکمه‌ی زیر کلیک کنید.";
 "error.appEncrypted" = "این یک پرونده رمزنگاری‌شده است! لطفاً از یک پرونده IPA رمزشکسته (Decrypted) استفاده کنید. پرونده‌های IPA که از طریق نرم‌افزار iMazing بدست آمده‌اند، قابل استفاده نیستند!";
 "error.appCorrupted" = "چیزی در مورد این پرونده IPA درست نیست. لطفاً از پرونده‌ی IPA دیگری استفاده کنید.";
-"error.appProhibited" = "استفاده از این برنامه از طریق PlayCover ممکن است منجر به مسدود شدن حساب کاربری شما شود!";
+"error.appProhibited" = "استفاده از این برنامه از طریق MaClub ممکن است منجر به مسدود شدن حساب کاربری شما شود!";
 "settings.title" = "پیکربندی‌های %@";
 "settings.tab.info" = "درباره برنامه";
 "settings.tab.km" = "Keymapping";
@@ -111,7 +111,7 @@
 "settings.text.detectedResolution" = "وضوح شناسایی‌شده:";
 "playapp.add" = "نصب برنامه";
 "alert.wrongFileType.title" = "پرونده از نوع درستی نیست!";
-"alert.wrongFileType.subtitle" = "PlayCover تنها می‌تواند پرونده‌های IPA معتبر را نصب کند.";
+"alert.wrongFileType.subtitle" = "MaClub تنها می‌تواند پرونده‌های IPA معتبر را نصب کند.";
 "playapp.addSource" = "افزودن مخزن";
 "ipaLibrary.noSources.title" = "مخزنی یافت نشد";
 "ipaLibrary.noSources.subtitle" = "تاکنون مخزنی برای پرونده‌های IPA اضافه نکرده‌اید. با کلیک برروی دکمه زیر می‌توانید این کار را انجام دهید.";
@@ -138,8 +138,8 @@
 "preferences.toggle.removeEntitlements" = "دسترسی‌سازهای برنامه را لغو کن";
 "preferences.button.pruneFiles" = "پرونده‌های بلااستفاده را پاک کن";
 "preferences.prune.alert" = "از پاک کردن پرونده‌های بلااستفاده مطمئن هستید؟";
-"preferences.prune.message" = "با این کار تمامی پیکربندی‌ها، Keymapها، دسترسی‌سازها و داده‌های برنامه‌هایی که در گذشته حذف شده‌اند و در PlayCover بلااستفاده باقی‌مانده‌اند، پاک خواهد شد";
-"alert.supression" = "این مورد را می‌توانید در پیکربندی PlayCover تغییر دهید";
+"preferences.prune.message" = "با این کار تمامی پیکربندی‌ها، Keymapها، دسترسی‌سازها و داده‌های برنامه‌هایی که در گذشته حذف شده‌اند و در MaClub بلااستفاده باقی‌مانده‌اند، پاک خواهد شد";
+"alert.supression" = "این مورد را می‌توانید در پیکربندی MaClub تغییر دهید";
 "menubar.clearCache" = "Cache را پاک‌سازی کن";
 "settings.removePlayTools" = "حذف PlayTools از برنامه";
 "settings.info.playTools" = "PlayTools نصب است:";
@@ -151,7 +151,7 @@
 "button.No" = "خیر";
 "settings.noPlayTools" = "PlayTools در این برنامه نصب نیست";
 "playapp.refreshSources" = "تازه‌سازی مخزن‌ها";
-"error.appMaliciousProhibited" = "از این برنامه در مک، رفتارهای مخربانه دیده شده است؛ استفاده از آن ممکن است سیستم عامل دستگاه شما را از بین ببرد، به همین خاطر استفاده از آن در PlayCover ممنوع شده است. (در حال حذف برنامه...)";
+"error.appMaliciousProhibited" = "از این برنامه در مک، رفتارهای مخربانه دیده شده است؛ استفاده از آن ممکن است سیستم عامل دستگاه شما را از بین ببرد، به همین خاطر استفاده از آن در MaClub ممنوع شده است. (در حال حذف برنامه...)";
 "alert.install.injectPlayToolsQuestion" = "آیا می‌خواهید PlayTools را در این برنامه نصب کنید؟";
 "alert.install.playToolsInformative" = "افزونه PlayTools به شما کمک می‌کند که از صفحه کلید برای کنترل برنامه استفاده کنید، رزولوشن آن راتغییر دهید و مواردی دیگر، اما ممکن است لازم باشد برای برخی برنامه‌ها آن را نصب نکنید";
 "button.Help" = "مستندات";

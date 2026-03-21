@@ -20,7 +20,7 @@
 "alert.moveAppToApplications.move" = "Mover a /Applications";
 
 /* (No Comment) */
-"alert.restart" = "Reinicie PlayCover.";
+"alert.restart" = "Reinicie MaClub.";
 
 /* (No Comment) */
 "alert.success" = "Operación completada";
@@ -71,7 +71,7 @@
 "notification.appInstalled" = "¡Aplicación instalada!";
 
 /* (No Comment) */
-"notification.appInstalled.message" = "¡Compruébelo en PlayCover!";
+"notification.appInstalled.message" = "¡Compruébelo en MaClub!";
 
 /* (No Comment) */
 "playapp.clearCache" = "Eliminar datos de la aplicación";
@@ -198,11 +198,11 @@
 "playapp.exportKmPanel.fieldLabel" = "Nombre del PlayMap:";
 "sidebar.appLibrary" = "Aplicaciones";
 "alert.moveAppToApplications.title" = "¿Quiere moverlo a la carpeta Aplicaciones?";
-"alert.moveAppToApplications.subtitle" = "PlayCover debe estar en la carpeta Aplicaciones para funcionar correctamente. Pulse el botón de abajo para que PlayCover se mueva automáticamente.";
+"alert.moveAppToApplications.subtitle" = "MaClub debe estar en la carpeta Aplicaciones para funcionar correctamente. Pulse el botón de abajo para que MaClub se mueva automáticamente.";
 "button.Quit" = "Salir";
 "error.appEncrypted" = "¡Esta aplicación está encriptada! Por favor utilice un IPA descifrado. ¡Los IPA de iMazing no son compatibles!";
 "error.appCorrupted" = "Algo ha ido mal con este IPA. Por favor, intente utilizar otro archivo IPA.";
-"error.appProhibited" = "¡Usar esta aplicación a través de PlayCover probablemente resultará en una prohibición!";
+"error.appProhibited" = "¡Usar esta aplicación a través de MaClub probablemente resultará en una prohibición!";
 "settings.tab.info" = "Info";
 "settings.tab.km" = "Asignación de teclas";
 "settings.toggle.km.help" = "Añade soporte para teclado en juegos exclusivamente táctiles. Utilice Command + K para abrir el editor.";
@@ -234,7 +234,7 @@
 "settings.text.detectedResolution" = "Resolución detectada:";
 "playapp.add" = "Añadir aplicación";
 "alert.wrongFileType.title" = "¡Tipo de archivo incorrecto!";
-"alert.wrongFileType.subtitle" = "PlayCover solo puede instalar archivos .ipa válidos.";
+"alert.wrongFileType.subtitle" = "MaClub solo puede instalar archivos .ipa válidos.";
 "playapp.addSource" = "Añadir fuente";
 "ipaLibrary.noSources.title" = "Ninguna fuente de IPA añadida";
 "ipaLibrary.noSources.subtitle" = "Actualmente no tiene fuentes IPA añadidas. Haga clic en el botón de abajo para añadir una.";
@@ -262,7 +262,7 @@
 "preferences.prune.alert" = "¿Confirma que quiere limpiar todos los archivos?";
 "preferences.prune.message" = "Esto eliminará todos los archivos que no se utilicen, incluidos los de configuración, asignación de teclas, permisos y datos de la aplicación";
 "playapp.progress.failed" = "Fallido";
-"alert.supression" = "Puede cambiar esto en la configuración de PlayCover";
+"alert.supression" = "Puede cambiar esto en la configuración de MaClub";
 "menubar.clearCache" = "Eliminar antememoria";
 "preferences.tab.install" = "Instalar";
 "preferences.toggle.showInstallPopup" = "Mostrar ventana de instalación de PlayTools";
@@ -274,7 +274,7 @@
 "settings.removePlayTools" = "Desinstalar PlayTools";
 "settings.info.playTools" = "PlayTools instalado:";
 "playapp.refreshSources" = "Actualizar fuentes";
-"error.appMaliciousProhibited" = "Esta aplicación se comporta maliciosamente en Mac, y usarla puede dejar su computadora en un estado de no arranque. Por ello es bloqueada por PlayCover. (Desinstalando...)";
+"error.appMaliciousProhibited" = "Esta aplicación se comporta maliciosamente en Mac, y usarla puede dejar su computadora en un estado de no arranque. Por ello es bloqueada por MaClub. (Desinstalando...)";
 "alert.install.injectPlayToolsQuestion" = "¿Quiere inyectar PlayTools en esta aplicación?";
 "alert.install.playToolsInformative" = "PlayTools es una herramienta que permite asignar teclas a toques en la pantalla, configurar resoluciones personalizadas, y más. Puede impactar negativamente el funcionamiento de algunas aplicaciones";
 "state.enabled" = "Activado";

@@ -20,7 +20,7 @@
 "alert.moveAppToApplications.move" = "응용 프로그램 폴더로 이동하기";
 
 /* (No Comment) */
-"alert.restart" = "PlayCover를 다시 시작하세요.";
+"alert.restart" = "MaClub를 다시 시작하세요.";
 
 /* (No Comment) */
 "alert.success" = "성공";
@@ -71,7 +71,7 @@
 "notification.appInstalled" = "앱이 설치되었습니다!";
 
 /* (No Comment) */
-"notification.appInstalled.message" = "PlayCover에서 확인하세요!";
+"notification.appInstalled.message" = "MaClub에서 확인하세요!";
 
 /* (No Comment) */
 "playapp.clearCache" = "앱 데이터 지우기";
@@ -192,15 +192,15 @@
 
 /* (No Comment) */
 "settings.title" = "%@ 설정";
-"playapp.exportKmPanel.fieldLabel" = "PlayMap 이름:";
+"playapp.exportKmPanel.fieldLabel" = "MaMap 이름:";
 "sidebar.appLibrary" = "앱 보관함";
 "sidebar.ipaLibrary" = "IPA 보관함";
 "alert.moveAppToApplications.title" = "응용 프로그램 폴더로 이동할까요?";
-"alert.moveAppToApplications.subtitle" = "PlayCover가 올바르게 실행되려면 반드시 응용 프로그램 폴더에 있어야 합니다. PlayCover를 자동으로 이동하려면 아래 버튼을 누르세요.";
+"alert.moveAppToApplications.subtitle" = "MaClub가 올바르게 실행되려면 반드시 응용 프로그램 폴더에 있어야 합니다. MaClub를 자동으로 이동하려면 아래 버튼을 누르세요.";
 "button.Quit" = "종료";
 "error.appEncrypted" = "이 앱은 암호화되어 있습니다! 복호화된 IPA를 사용해 주세요. iMazing IPA는 지원되지 않습니다!";
 "error.appCorrupted" = "이 IPA에 문제가 발생했습니다. 다른 IPA를 사용해 보세요.";
-"error.appProhibited" = "PlayCover를 통해 이 앱을 사용하면 차단될 수 있습니다!";
+"error.appProhibited" = "MaClub를 통해 이 앱을 사용하면 차단될 수 있습니다!";
 "settings.tab.info" = "정보";
 "settings.tab.km" = "키매핑";
 "settings.toggle.km.help" = "터치 전용 게임에 키보드 지원을 추가합니다. Command + K로 편집기 창을 열 수 있습니다.";
@@ -234,7 +234,7 @@
 "settings.text.detectedResolution" = "감지된 해상도:";
 "playapp.add" = "앱 추가하기";
 "alert.wrongFileType.title" = "파일 형식 잘못됨!";
-"alert.wrongFileType.subtitle" = "PlayCover는 유효한 .ipa 파일만 설치할 수 있습니다.";
+"alert.wrongFileType.subtitle" = "MaClub는 유효한 .ipa 파일만 설치할 수 있습니다.";
 "ipaLibrary.noSources.title" = "추가된 IPA 소스 없음";
 "ipaLibrary.noSources.button" = "소스 추가하기";
 "playapp.addSource" = "소스 추가하기";
@@ -252,7 +252,7 @@
 "playapp.download.downloading" = "다운로드 중";
 "error.waitDownload" = "현재 다운로드가 끝날 때까지 기다려 주세요!";
 "playapp.progress.failed" = "실패함";
-"alert.supression" = "PlayCover 환경설정에서 변경할 수 있습니다";
+"alert.supression" = "MaClub 환경설정에서 변경할 수 있습니다";
 "preferences.toggle.clearAppData" = "데이터 지우기";
 "preferences.tab.uninstall" = "삭제";
 "preferences.whenUninstalling" = "삭제할 때:";
@@ -274,7 +274,7 @@
 "settings.removePlayTools" = "PlayTools 제거";
 "settings.info.playTools" = "PlayTools 설치:";
 "playapp.refreshSources" = "소스 다시 로드";
-"error.appMaliciousProhibited" = "이 앱은 Mac에서 악의적으로 작동하며 기기를 부팅할 수 없는 상태로 만들 수 있으므로 PlayCover에서 차단됩니다. (삭제하는 중...)";
+"error.appMaliciousProhibited" = "이 앱은 Mac에서 악의적으로 작동하며 기기를 부팅할 수 없는 상태로 만들 수 있으므로 MaClub에서 차단됩니다. (삭제하는 중...)";
 "alert.install.injectPlayToolsQuestion" = "이 응용 프로그램에 PlayTools를 주입하겠습니까?";
 "alert.install.playToolsInformative" = "PlayTools는 화면 터치, 사용자 지정 디스플레이 해상도 등에 키를 바인딩할 수 있는 도구이지만 특정 앱에서 중단될 수 있습니다";
 "state.pendingReboot" = "재시동 대기 중";
@@ -312,9 +312,9 @@
 "alert.differentBundleIdKeymap.text" = "정말로 이 키매핑을 가져오겠습니까?";
 "settings.unavailable.hud" = "Metal HUD를 사용할 수 없습니다";
 "error.failedToStripBinary" = "fat 바이너리에서 ARM64 아키텍처를 찾을 수 없습니다!";
-"settings.playChain.debugging" = "PlayChain 디버깅";
-"settings.playChain.enable" = "PlayChain 사용 (실험적)";
-"settings.playChain.help" = "이 애플리케이션에 대한 PlayChain 지원을 활성화하여 Apple 키체인 서비스를 (부분적으로) 사용할 수 있도록 합니다";
+"settings.playChain.debugging" = "MaChain 디버깅";
+"settings.playChain.enable" = "MaChain 사용 (실험적)";
+"settings.playChain.help" = "이 애플리케이션에 대한 MaChain 지원을 활성화하여 Apple 키체인 서비스를 (부분적으로) 사용할 수 있도록 합니다";
 "playapp.noSources.title" = "설치된 IPA 없음";
 "playapp.noSources.subtitle" = "현재 설치된 IPA가 없습니다. 아래 버튼을 클릭하여 가져오세요.";
 "settings.tab.bypasses" = "우회";
@@ -322,12 +322,12 @@
 "playapp.download.differentChecksum" = "체크섬이 다릅니다! 설치를 계속하겠습니까?";
 "playapp.download.differentChecksumDesc" = "\"%@\"이(가) 아닌 \"%@\"을(를) 받았습니다";
 "playapp.progress.canceled" = "취소됨";
-"playapp.clearPlayChain" = "PlayChain 데이터 지우기";
+"playapp.clearPlayChain" = "MaChain 데이터 지우기";
 "playapp.importIPA" = "IPA 가져오기";
 "ipaLibrary.noNetworkConnection.required" = "IPA 라이브러리는 인터넷 연결이 필요합니다";
-"preferences.toggle.removePlayChain" = "PlayChain 제거하기";
+"preferences.toggle.removePlayChain" = "MaChain 제거하기";
 "preferences.popover.duplicate" = "링크 복사하기";
-"alert.app.clearPlayChain" = "모든 PlayChain 데이터가 지워집니다. 앱에 다시 로그인해야 할 수 있습니다. 계속하겠습니까?";
+"alert.app.clearPlayChain" = "모든 MaChain 데이터가 지워집니다. 앱에 다시 로그인해야 할 수 있습니다. 계속하겠습니까?";
 "button.Reload" = "다시 로드";
 "settings.highResolution" = "높은 해상도는 충돌을 일으킬 수 있습니다";
 "settings.picker.windowFix" = "디스플레이 문제 수정";
@@ -341,7 +341,7 @@
 "keycover.button.lockAll" = "모든 체인 잠그기";
 "keycover.button.changePassword" = "마스터 암호 변경";
 "keycover.toggle.startupPrompt" = "KeyCover 시작 시 암호 묻기";
-"keycover.toggle.startupPrompt.help" = "KeyCover가 애플리케이션을 시작할 때 마스터 암호를 묻는 메시지를 표시합니다. 사용 해제하면 PlayChain을 사용하는 앱을 시작할 때 메시지가 표시됩니다.";
+"keycover.toggle.startupPrompt.help" = "KeyCover가 애플리케이션을 시작할 때 마스터 암호를 묻는 메시지를 표시합니다. 사용 해제하면 MaChain을 사용하는 앱을 시작할 때 메시지가 표시됩니다.";
 "keycover.setup.useGeneratedKey" = "자동으로 관리";
 "keycover.setup.useUserKey" = "내 키 사용";
 "button.Enable" = "사용";

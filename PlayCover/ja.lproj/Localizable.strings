@@ -20,7 +20,7 @@
 "alert.moveAppToApplications.move" = "/Applicationsに移動";
 
 /* (No Comment) */
-"alert.restart" = "PlayCoverを再起動してください。";
+"alert.restart" = "MaClubを再起動してください。";
 
 /* (No Comment) */
 "alert.success" = "完了しました";
@@ -71,7 +71,7 @@
 "notification.appInstalled" = "アプリをインストールしました！";
 
 /* (No Comment) */
-"notification.appInstalled.message" = "PlayCoverでチェックしてください！";
+"notification.appInstalled.message" = "MaClubでチェックしてください！";
 
 /* (No Comment) */
 "playapp.clearCache" = "アプリのキャッシュを消去";
@@ -197,11 +197,11 @@
 "sidebar.appLibrary" = "アプリケーションライブラリ";
 "sidebar.ipaLibrary" = "IPAライブラリ";
 "alert.moveAppToApplications.title" = "アプリケーションフォルダに移動させますか？";
-"alert.moveAppToApplications.subtitle" = "正しく実行するには、PlayCoverがアプリケーションフォルダにある必要があります。下のボタンを押すと、PlayCoverが自動的に移動されます。";
+"alert.moveAppToApplications.subtitle" = "正しく実行するには、MaClubがアプリケーションフォルダにある必要があります。下のボタンを押すと、MaClubが自動的に移動されます。";
 "button.Quit" = "終了";
 "error.appEncrypted" = "このアプリは暗号化されています!復号化されたIPAを使用してください。iMazing IPAはサポートされていません！";
 "error.appCorrupted" = "問題が発生しました。 別の IPA ファイルを使用してみてください。";
-"error.appProhibited" = "PlayCoverでこのアプリを使用すると、BAN される可能性があります!";
+"error.appProhibited" = "MaClubでこのアプリを使用すると、BAN される可能性があります!";
 "settings.title" = "%@設定";
 "settings.tab.info" = "情報";
 "settings.tab.km" = "キーマップ";
@@ -234,7 +234,7 @@
 "settings.text.detectedResolution" = "検出された解像度:";
 "playapp.add" = "アプリを追加";
 "alert.wrongFileType.title" = "ファイルのタイプが無効です!";
-"alert.wrongFileType.subtitle" = "PlayCoverは有効な.ipaファイルのみをインストールできます。";
+"alert.wrongFileType.subtitle" = "MaClubは有効な.ipaファイルのみをインストールできます。";
 "playapp.addSource" = "ソースを追加";
 "ipaLibrary.noSources.title" = "ソースがありません";
 "ipaLibrary.noSources.subtitle" = "IPAのソースがありません。ボタンをクリックして追加します。";
@@ -263,7 +263,7 @@
 "preferences.prune.alert" = "すべてのファイルを削除しますか？";
 "preferences.prune.message" = "これにより、設定、キーマッピング、エンタイトルメント、アプリデータなどのファイルがすべて削除されます";
 "playapp.progress.failed" = "失敗";
-"alert.supression" = "これはPlayCover環境設定で変更できます";
+"alert.supression" = "これはMaClub環境設定で変更できます";
 "preferences.tab.install" = "インストール";
 "preferences.toggle.showInstallPopup" = "PlayToolsをインストールするポップアップを表示する";
 "preferences.toggle.alwaysInstallPlayTools" = "常にPlayToolsをインストールする";
@@ -274,7 +274,7 @@
 "settings.removePlayTools" = "PlayToolsを削除";
 "settings.info.playTools" = "PlayToolsがインストール済み:";
 "playapp.refreshSources" = "ソースを更新";
-"error.appMaliciousProhibited" = "このアプリは Mac で悪意を持って動作し、これを使用するとデバイスが起動できない状態になる可能性があるため、PlayCover からブロックされました。 (アンインストール中...)";
+"error.appMaliciousProhibited" = "このアプリは Mac で悪意を持って動作し、これを使用するとデバイスが起動できない状態になる可能性があるため、MaClub からブロックされました。 (アンインストール中...)";
 "alert.install.injectPlayToolsQuestion" = "PlayToolsをインストールしますか？";
 "alert.install.playToolsInformative" = "PlayTools は、キーをタッチスクリーンやカスタム ディスプレイ解像度などにバインドできるツールですが、特定のアプリが動作しなくなる可能性があります";
 "button.Help" = "ヘルプ";
@@ -312,9 +312,9 @@
 "settings.toggle.lldbWithTerminal" = "ターミナルで開く";
 "settings.unavailable.hud" = "Metal HUDは利用できません";
 "error.failedToStripBinary" = "ファット バイナリで ARM64 arch が見つかりませんでした!";
-"settings.playChain.enable" = "PlayChain を有効にする (実験的)";
-"settings.playChain.help" = "このアプリケーションの PlayChain サポートを有効にして、(部分的に) Apple Keychain Services を使用できるようにします";
-"settings.playChain.debugging" = "PlayChain のデバッグ";
+"settings.playChain.enable" = "MaChain を有効にする (実験的)";
+"settings.playChain.help" = "このアプリケーションの MaChain サポートを有効にして、(部分的に) Apple Keychain Services を使用できるようにします";
+"settings.playChain.debugging" = "MaChain のデバッグ";
 "playapp.noSources.title" = "IPA がインストールされていません";
 "playapp.noSources.subtitle" = "現在、IPA はインストールされていません。 下のボタンをクリックしてインポートします。";
 "settings.tab.bypasses" = "回避";
@@ -323,12 +323,12 @@
 "playapp.download.differentChecksumDesc" = "期待される \"%@\", got \"%@\"";
 "playapp.progress.canceled" = "キャンセルされました";
 "playapp.importIPA" = "ipaをインポート";
-"preferences.toggle.removePlayChain" = "PlayChainを削除";
+"preferences.toggle.removePlayChain" = "MaChainを削除";
 "button.Reload" = "リロード";
-"playapp.clearPlayChain" = "PlayChain データを消去";
+"playapp.clearPlayChain" = "MaChain データを消去";
 "ipaLibrary.noNetworkConnection.required" = "IPAライブラリにはインターネット接続が必要です";
 "preferences.popover.duplicate" = "リンクを複製";
-"alert.app.clearPlayChain" = "すべての PlayChain データが消去されます。 アプリへの再ログインが必要になる場合があります。 続けますか?";
+"alert.app.clearPlayChain" = "すべての MaChain データが消去されます。 アプリへの再ログインが必要になる場合があります。 続けますか?";
 "settings.highResolution" = "高解像度はクラッシュを引き起こす可能性があります";
 "settings.picker.windowFix" = "ウィンドウの問題を修正";
 "settings.picker.windowFix.help" = "アプリが正常に表示されるようにするウィンドウ修正を適用";
@@ -357,7 +357,7 @@
 "keycover.button.lockAll" = "全てのチェーンをロック";
 "keycover.button.changePassword" = "マスターパスワードを変更";
 "keycover.toggle.startupPrompt" = "Prompt for KeyCover at startup";
-"keycover.toggle.startupPrompt.help" = "KeyCover will prompt for your master password when you launch the application. If this is disabled, it will be prompted when you launch an app that uses PlayChain.";
+"keycover.toggle.startupPrompt.help" = "KeyCover will prompt for your master password when you launch the application. If this is disabled, it will be prompted when you launch an app that uses MaChain.";
 "keycover.setup.useGeneratedKey" = "Managed Automatically";
 "keycover.setup.useUserKey" = "Use my own key";
 "keycover.setup.encryptionKey" = "Encryption Key: ";

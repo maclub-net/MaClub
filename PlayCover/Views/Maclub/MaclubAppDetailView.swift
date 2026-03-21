@@ -36,10 +36,10 @@ struct MaclubAppDetailView: View {
                         isSubscribed: $isSubscribed,
                         isLoadingFreeDownload: $isLoadingFreeDownload,
                         isLoadingHighSpeed: $isLoadingHighSpeed,
-                        isLoadingInstall: $isLoadingInstall,
                         isLoadingFavorite: $isLoadingFavorite,
                         isLoadingSubscribe: $isLoadingSubscribe,
                         isLoadingCheckUpdate: $isLoadingCheckUpdate,
+                        isLoadingInstall: $isLoadingInstall,
                         showDownloadPopup: $showDownloadPopup,
                         showHighSpeedDownloadPopup: $showHighSpeedDownloadPopup,
                         highSpeedDownloadLinks: $highSpeedDownloadLinks,
@@ -100,10 +100,10 @@ struct AppDetailHeaderView: View {
     @Binding var isSubscribed: Bool
     @Binding var isLoadingFreeDownload: Bool
     @Binding var isLoadingHighSpeed: Bool
-    @Binding var isLoadingInstall: Bool
     @Binding var isLoadingFavorite: Bool
     @Binding var isLoadingSubscribe: Bool
     @Binding var isLoadingCheckUpdate: Bool
+    @Binding var isLoadingInstall: Bool
     @Binding var showDownloadPopup: Bool
     @Binding var showHighSpeedDownloadPopup: Bool
     @Binding var highSpeedDownloadLinks: [HighSpeedDownloadLink]
@@ -139,10 +139,10 @@ struct AppDetailHeaderView: View {
                 isSubscribed: $isSubscribed,
                 isLoadingFreeDownload: $isLoadingFreeDownload,
                 isLoadingHighSpeed: $isLoadingHighSpeed,
-                isLoadingInstall: $isLoadingInstall,
                 isLoadingFavorite: $isLoadingFavorite,
                 isLoadingSubscribe: $isLoadingSubscribe,
                 isLoadingCheckUpdate: $isLoadingCheckUpdate,
+                isLoadingInstall: $isLoadingInstall,
                 showDownloadPopup: $showDownloadPopup,
                 showHighSpeedDownloadPopup: $showHighSpeedDownloadPopup,
                 highSpeedDownloadLinks: $highSpeedDownloadLinks,

@@ -267,13 +267,13 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
     }
     
     private func installIPA(at url: URL) {
-        Installer.install(ipaUrl: url, export: false) { installedUrl in
+        Installer.install(ipaUrl: url, export: false) { [weak self] installedUrl in
             if let installedUrl = installedUrl {
                 print("IPA安装成功: \(installedUrl)")
-                showSuccessAlert(message: "应用安装成功")
+                self?.showSuccessAlert(message: "应用安装成功")
             } else {
                 print("IPA安装失败")
-                showErrorAlert(message: "应用安装失败")
+                self?.showErrorAlert(message: "应用安装失败")
             }
         }
     }

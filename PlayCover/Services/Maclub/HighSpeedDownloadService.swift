@@ -20,14 +20,18 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
     }
     
     func getHighSpeedDownloadLinks(versionId: Int) async -> [HighSpeedDownloadLink] {
-        isLoading = true
-        error = nil
+        DispatchQueue.main.async {
+            self.isLoading = true
+            self.error = nil
+        }
         
         let urlString = "https://www.maclub.net/appstore/dl/\(versionId)/vip"
         
         guard let url = URL(string: urlString) else {
-            error = "Invalid URL"
-            isLoading = false
+            DispatchQueue.main.async {
+                self.error = "Invalid URL"
+                self.isLoading = false
+            }
             return []
         }
         
@@ -41,25 +45,33 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
             let (data, response) = try await URLSession.shared.data(for: request)
             
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                error = "Invalid response"
-                isLoading = false
+                DispatchQueue.main.async {
+                    self.error = "Invalid response"
+                    self.isLoading = false
+                }
                 return []
             }
             
             let decoder = JSONDecoder()
             let result = try decoder.decode(HighSpeedDownloadResponse.self, from: data)
             
-            isLoading = false
+            DispatchQueue.main.async {
+                self.isLoading = false
+            }
             
             if result.code == 200 {
                 return result.data
             } else {
-                error = result.message
+                DispatchQueue.main.async {
+                    self.error = result.message
+                }
                 return []
             }
         } catch {
-            self.error = error.localizedDescription
-            isLoading = false
+            DispatchQueue.main.async {
+                self.error = error.localizedDescription
+                self.isLoading = false
+            }
             return []
         }
     }
@@ -67,11 +79,16 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
     func startDownload(record: DownloadRecord) {
         guard let url = URL(string: record.downloadUrl) else { return }
         
+        // 开始下载进度显示
+        DownloadVM.shared.next(.downloading, 0.0, 0.7)
+        
         let task = session.downloadTask(with: url)
         task.taskDescription = record.id.uuidString
         task.resume()
         downloadTasks[record.id] = task
-        updateDownloadStatus(recordId: record.id, status: .downloading)
+        DispatchQueue.main.async {
+            self.updateDownloadStatus(recordId: record.id, status: .downloading)
+        }
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
@@ -80,6 +97,12 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
         DispatchQueue.main.async {
             self.updateDownloadProgress(recordId: recordId, downloadedSize: totalBytesWritten, totalSize: totalBytesExpectedToWrite)
             self.calculateDownloadSpeed(recordId: recordId, bytesWritten: bytesWritten)
+            
+            // 更新下载进度显示
+            if totalBytesExpectedToWrite > 0 {
+                let progress = Double(totalBytesWritten) / Double(totalBytesExpectedToWrite)
+                DownloadVM.shared.progress = progress
+            }
         }
     }
     
@@ -106,12 +129,16 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
                 self.updateDownloadStatus(recordId: recordId, status: .completed)
                 self.updateEndTime(recordId: recordId, time: Date())
                 
+                // 更新下载进度为完成状态
+                DownloadVM.shared.next(.integrity, 0.7, 0.95)
+                
                 // 自动安装IPA文件
                 self.installIPA(at: destinationUrl)
             }
         } catch {
             DispatchQueue.main.async {
                 self.updateDownloadStatus(recordId: recordId, status: .failed)
+                DownloadVM.shared.next(.failed, 0.95, 1.0)
             }
         }
         
@@ -125,6 +152,7 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
             DispatchQueue.main.async {
                 self.updateDownloadStatus(recordId: recordId, status: .failed)
                 self.downloadTasks.removeValue(forKey: recordId)
+                DownloadVM.shared.next(.failed, 0.95, 1.0)
             }
         }
     }
@@ -135,7 +163,9 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
                 if let data = data {
                     UserDefaults.standard.set(data, forKey: "resumeData_\(recordId)")
                 }
-                self?.updateDownloadStatus(recordId: recordId, status: .paused)
+                DispatchQueue.main.async {
+                    self?.updateDownloadStatus(recordId: recordId, status: .paused)
+                }
             })
             downloadTasks.removeValue(forKey: recordId)
         }
@@ -149,7 +179,9 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
             task.taskDescription = record.id.uuidString
             task.resume()
             downloadTasks[record.id] = task
-            updateDownloadStatus(recordId: record.id, status: .downloading)
+            DispatchQueue.main.async {
+                self.updateDownloadStatus(recordId: record.id, status: .downloading)
+            }
         } else {
             startDownload(record: record)
         }
@@ -160,7 +192,9 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
             task.cancel()
             downloadTasks.removeValue(forKey: recordId)
         }
-        updateDownloadStatus(recordId: recordId, status: .failed)
+        DispatchQueue.main.async {
+            self.updateDownloadStatus(recordId: recordId, status: .failed)
+        }
     }
     
     func deleteRecord(recordId: UUID) {
@@ -264,12 +298,16 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
     
     private func installIPA(at url: URL) {
         Installer.install(ipaUrl: url, export: false) { [weak self] installedUrl in
-            if let installedUrl = installedUrl {
-                print("IPA安装成功: \(installedUrl)")
-                self?.showSuccessAlert(message: "应用安装成功")
-            } else {
-                print("IPA安装失败")
-                self?.showErrorAlert(message: "应用安装失败")
+            DispatchQueue.main.async {
+                if let installedUrl = installedUrl {
+                    print("IPA安装成功: \(installedUrl)")
+                    DownloadVM.shared.next(.finish, 0.95, 1.0)
+                    self?.showSuccessAlert(message: "应用安装成功")
+                } else {
+                    print("IPA安装失败")
+                    DownloadVM.shared.next(.failed, 0.95, 1.0)
+                    self?.showErrorAlert(message: "应用安装失败")
+                }
             }
         }
     }

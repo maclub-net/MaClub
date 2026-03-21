@@ -59,6 +59,7 @@
 		587B0C042F6EC24200CB9B60 /* MaclubUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B0BF52F6EC24200CB9B60 /* MaclubUserProfileView.swift */; };
 		587B0C052F6EC24200CB9B60 /* MaclubHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B0BF22F6EC24200CB9B60 /* MaclubHomeView.swift */; };
 		587B0C062F6EC24200CB9B60 /* MaclubAppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B0BF02F6EC24200CB9B60 /* MaclubAppDetailView.swift */; };
+		58AEA34E2F6EDA9000820B3C /* AppDetailComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AEA34D2F6EDA9000820B3C /* AppDetailComponents.swift */; };
 		6888981729F9158700105D9C /* IPASourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6888981629F9158700105D9C /* IPASourceView.swift */; };
 		68E48B952957046D00C39879 /* DownloadManager in Frameworks */ = {isa = PBXBuildFile; productRef = 68E48B942957046D00C39879 /* DownloadManager */; };
 		68E48B97295704A600C39879 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E48B96295704A600C39879 /* Downloader.swift */; };
@@ -196,6 +197,7 @@
 		587B0BF42F6EC24200CB9B60 /* MaclubToolLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaclubToolLibraryView.swift; sourceTree = "<group>"; };
 		587B0BF52F6EC24200CB9B60 /* MaclubUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaclubUserProfileView.swift; sourceTree = "<group>"; };
 		587B0BF62F6EC24200CB9B60 /* MaclubUserStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaclubUserStatusView.swift; sourceTree = "<group>"; };
+		58AEA34D2F6EDA9000820B3C /* AppDetailComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailComponents.swift; sourceTree = "<group>"; };
 		6854C5E528D53C9500CE28A0 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6888981629F9158700105D9C /* IPASourceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPASourceView.swift; sourceTree = "<group>"; };
 		68C79E67296741580041DBC9 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 		587B0BF72F6EC24200CB9B60 /* Maclub */ = {
 			isa = PBXGroup;
 			children = (
+				58AEA34D2F6EDA9000820B3C /* AppDetailComponents.swift */,
 				587B0BED2F6EC24200CB9B60 /* Components */,
 				587B0BEE2F6EC24200CB9B60 /* AppDetailWindowManager.swift */,
 				587B0BEF2F6EC24200CB9B60 /* MaclubAppDetailLoaderView.swift */,
@@ -859,6 +862,7 @@
 				6EB4B57428C93E0600630890 /* LegacySettings.swift in Sources */,
 				ABED59832887A32F004D782B /* MenuBarView.swift in Sources */,
 				B6AB53C929232B4F00039B2E /* KeyCodeNames.swift in Sources */,
+				58AEA34E2F6EDA9000820B3C /* AppDetailComponents.swift in Sources */,
 				92EE06D4274EA604002C907B /* PlayAppView.swift in Sources */,
 				B67C1A112AE8091F00F396CC /* StoreInfoAppView.swift in Sources */,
 				587B0BF82F6EC24200CB9B60 /* MaclubToolLibraryView.swift in Sources */,
@@ -997,7 +1001,7 @@
 		8783D00926B8C52E00171041 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = arm64;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -1101,7 +1105,7 @@
 		9BFBDA6828C95BA500252EB7 /* Nightly */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = arm64;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;

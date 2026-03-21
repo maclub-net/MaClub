@@ -672,7 +672,7 @@ struct InstallButton: View {
             }
         }) {
             ActionButtonContent(
-                icon: "arrow.down.to.line.and.arrow.up.from.line",
+                icon: "arrow.down.to.line",
                 text: isLoading ? "安装中..." : "立即安装",
                 isLoading: isLoading,
                 gradient: LinearGradient(

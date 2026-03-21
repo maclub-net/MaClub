@@ -22,20 +22,22 @@ struct MaclubHomeView: View {
             Spacer()
 
             VStack(spacing: 24) {
-                VStack(spacing: 8) {
+                HStack(spacing: 24) {
                     Image("logo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 60, height: 60)
+                        .frame(width: 120, height: 120)
 
-                    Text("Mac俱乐部")
-                        .font(.system(size: 36, weight: .bold))
-                        .foregroundColor(.primary)
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Mac俱乐部")
+                            .font(.system(size: 36, weight: .bold))
+                            .foregroundColor(.primary)
 
-                    Text("搜索应用，发现更多可能")
-                        .font(.system(size: 16))
-                        .foregroundColor(.secondary)
-                        .opacity(0.8)
+                        Text("搜索应用，发现更多可能")
+                            .font(.system(size: 16))
+                            .foregroundColor(.secondary)
+                            .opacity(0.8)
+                    }
                 }
 
                 searchField

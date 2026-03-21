@@ -22,7 +22,7 @@
 </div>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## 关于项目
 
 Mac俱乐部是基于PlayCover二次开发的软件，允许在运行macOS 12.0或更新版本的Apple Silicon设备上运行iOS应用和游戏。
 

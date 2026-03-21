@@ -23,9 +23,10 @@ struct MaclubHomeView: View {
 
             VStack(spacing: 24) {
                 VStack(spacing: 8) {
-                    Image(systemName: "magnifyingglass")
-                        .font(.system(size: 60))
-                        .foregroundColor(.accentColor)
+                    Image("logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 60, height: 60)
 
                     Text("Mac俱乐部")
                         .font(.system(size: 36, weight: .bold))

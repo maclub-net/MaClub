@@ -26,23 +26,25 @@ struct MaclubHomeView: View {
                     Image("logo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 120, height: 120)
+                        .frame(width: 100, height: 100)
 
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Mac俱乐部")
-                            .font(.system(size: 36, weight: .bold))
+                            .font(.system(size: 48, weight: .bold))
                             .foregroundColor(.primary)
 
-                        Text("搜索应用，发现更多可能")
-                            .font(.system(size: 16))
+                        Text("是扩展Mac应用商店的神器")
+                            .font(.system(size: 20))
                             .foregroundColor(.secondary)
                             .opacity(0.8)
                     }
                 }
+                .padding(.bottom, 20)
 
                 searchField
             }
             .padding(.horizontal, 60)
+            .padding(.bottom, 60)
 
             Spacer()
 

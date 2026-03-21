@@ -43,7 +43,7 @@ struct PlayCoverHelpMenuView: Commands {
                 }
             }
             Button("menubar.github", systemImage: "arrow.up.right") {
-                if let url = URL(string: "https://github.com/PlayCover/PlayCover/") {
+                if let url = URL(string: "https://github.com/maclub-net/MaClub/") {
                     NSWorkspace.shared.open(url)
                 }
             }

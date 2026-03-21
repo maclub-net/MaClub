@@ -114,6 +114,9 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
             updateDownloadPath(recordId: recordId, path: destinationUrl.path)
             updateDownloadStatus(recordId: recordId, status: .completed)
             updateEndTime(recordId: recordId, time: Date())
+            
+            // 自动安装IPA文件
+            installIPA(at: destinationUrl)
         } catch {
             updateDownloadStatus(recordId: recordId, status: .failed)
         }
@@ -261,5 +264,32 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
         if let path = UserDefaults.standard.string(forKey: "defaultDownloadPath") {
             defaultDownloadPath = path
         }
+    }
+    
+    private func installIPA(at url: URL) {
+        Installer.install(ipaUrl: url, export: false) { installedUrl in
+            if let installedUrl = installedUrl {
+                print("IPA安装成功: \(installedUrl)")
+                showSuccessAlert(message: "应用安装成功")
+            } else {
+                print("IPA安装失败")
+                showErrorAlert(message: "应用安装失败")
+            }
+        }
+    }
+    
+    private func showSuccessAlert(message: String) {
+        let alert = NSAlert()
+        alert.messageText = message
+        alert.addButton(withTitle: "确定")
+        alert.runModal()
+    }
+    
+    private func showErrorAlert(message: String) {
+        let alert = NSAlert()
+        alert.messageText = "安装失败"
+        alert.informativeText = message
+        alert.addButton(withTitle: "确定")
+        alert.runModal()
     }
 }

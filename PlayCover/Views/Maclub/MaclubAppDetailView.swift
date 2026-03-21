@@ -13,6 +13,7 @@ struct MaclubAppDetailView: View {
     @State private var highSpeedDownloadLinks: [HighSpeedDownloadLink] = []
     @State private var isLoadingHighSpeed = false
     @State private var isLoadingFreeDownload = false
+    @State private var isLoadingInstall = false
     @State private var isLoadingFavorite = false
     @State private var isLoadingSubscribe = false
     @State private var isLoadingCheckUpdate = false
@@ -35,6 +36,7 @@ struct MaclubAppDetailView: View {
                         isSubscribed: $isSubscribed,
                         isLoadingFreeDownload: $isLoadingFreeDownload,
                         isLoadingHighSpeed: $isLoadingHighSpeed,
+                        isLoadingInstall: $isLoadingInstall,
                         isLoadingFavorite: $isLoadingFavorite,
                         isLoadingSubscribe: $isLoadingSubscribe,
                         isLoadingCheckUpdate: $isLoadingCheckUpdate,
@@ -42,6 +44,7 @@ struct MaclubAppDetailView: View {
                         showHighSpeedDownloadPopup: $showHighSpeedDownloadPopup,
                         highSpeedDownloadLinks: $highSpeedDownloadLinks,
                         downloadService: downloadService,
+                        highSpeedDownloadService: highSpeedDownloadService,
                         interactionService: interactionService,
                         authService: authService
                     )
@@ -97,6 +100,7 @@ struct AppDetailHeaderView: View {
     @Binding var isSubscribed: Bool
     @Binding var isLoadingFreeDownload: Bool
     @Binding var isLoadingHighSpeed: Bool
+    @Binding var isLoadingInstall: Bool
     @Binding var isLoadingFavorite: Bool
     @Binding var isLoadingSubscribe: Bool
     @Binding var isLoadingCheckUpdate: Bool
@@ -104,6 +108,7 @@ struct AppDetailHeaderView: View {
     @Binding var showHighSpeedDownloadPopup: Bool
     @Binding var highSpeedDownloadLinks: [HighSpeedDownloadLink]
     let downloadService: DownloadService
+    let highSpeedDownloadService: HighSpeedDownloadService
     let interactionService: InteractionService
     let authService: AuthService
 
@@ -134,6 +139,7 @@ struct AppDetailHeaderView: View {
                 isSubscribed: $isSubscribed,
                 isLoadingFreeDownload: $isLoadingFreeDownload,
                 isLoadingHighSpeed: $isLoadingHighSpeed,
+                isLoadingInstall: $isLoadingInstall,
                 isLoadingFavorite: $isLoadingFavorite,
                 isLoadingSubscribe: $isLoadingSubscribe,
                 isLoadingCheckUpdate: $isLoadingCheckUpdate,
@@ -141,6 +147,7 @@ struct AppDetailHeaderView: View {
                 showHighSpeedDownloadPopup: $showHighSpeedDownloadPopup,
                 highSpeedDownloadLinks: $highSpeedDownloadLinks,
                 downloadService: downloadService,
+                highSpeedDownloadService: highSpeedDownloadService,
                 interactionService: interactionService,
                 authService: authService
             )
@@ -281,16 +288,25 @@ struct AppActionButtonsView: View {
     @Binding var isLoadingFavorite: Bool
     @Binding var isLoadingSubscribe: Bool
     @Binding var isLoadingCheckUpdate: Bool
+    @Binding var isLoadingInstall: Bool
     @Binding var showDownloadPopup: Bool
     @Binding var showHighSpeedDownloadPopup: Bool
     @Binding var highSpeedDownloadLinks: [HighSpeedDownloadLink]
     let downloadService: DownloadService
+    let highSpeedDownloadService: HighSpeedDownloadService
     let interactionService: InteractionService
     let authService: AuthService
 
     var body: some View {
         VStack(alignment: .trailing, spacing: 8) {
             HStack(spacing: 8) {
+                InstallButton(
+                    isLoading: $isLoadingInstall,
+                    detail: detail,
+                    highSpeedDownloadService: highSpeedDownloadService,
+                    authService: authService
+                )
+
                 FreeDownloadButton(
                     isLoading: $isLoadingFreeDownload,
                     showDownloadPopup: $showDownloadPopup,
@@ -615,6 +631,56 @@ struct CheckUpdateButton: View {
                 isLoading: isLoading,
                 gradient: LinearGradient(
                     gradient: Gradient(colors: [Color(red: 0.4, green: 0.6, blue: 1.0), Color(red: 0.3, green: 0.5, blue: 0.9)]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+        }
+        .buttonStyle(.plain)
+        .disabled(isLoading)
+    }
+}
+
+struct InstallButton: View {
+    @Binding var isLoading: Bool
+    let detail: AppDetailResponse
+    let highSpeedDownloadService: HighSpeedDownloadService
+    let authService: AuthService
+
+    var body: some View {
+        Button(action: {
+            guard !isLoading else { return }
+
+            if authService.isAuthenticated {
+                if let latestVersion = detail.data.versions.last {
+                    isLoading = true
+                    Task {
+                        await highSpeedDownloadService.getHighSpeedDownloadLinks(
+                            versionId: latestVersion.id,
+                            appName: detail.data.appName,
+                            appVersion: detail.data.version,
+                            appIcon: detail.data.appIcon
+                        )
+                        isLoading = false
+
+                        if !highSpeedDownloadService.downloadRecords.isEmpty {
+                            let firstRecord = highSpeedDownloadService.downloadRecords.last!
+                            highSpeedDownloadService.startDownload(record: firstRecord)
+                        } else {
+                            showErrorAlert(message: "无法获取下载链接")
+                        }
+                    }
+                }
+            } else {
+                NotificationCenter.default.post(name: .showLoginSheet, object: nil)
+            }
+        }) {
+            ActionButtonContent(
+                icon: "arrow.down.to.line.and.arrow.up.from.line",
+                text: isLoading ? "安装中..." : "立即安装",
+                isLoading: isLoading,
+                gradient: LinearGradient(
+                    gradient: Gradient(colors: [Color(red: 0.2, green: 0.7, blue: 0.3), Color(red: 0.1, green: 0.6, blue: 0.2)]),
                     startPoint: .top,
                     endPoint: .bottom
                 )

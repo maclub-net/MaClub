@@ -322,18 +322,18 @@ struct AppActionButtonsView: View {
                     detail: detail,
                     authService: authService
                 )
-
-                FavoriteButton(
-                    isFavorited: $isFavorited,
-                    isLoading: $isLoadingFavorite,
-                    softwareId: detail.data.id,
-                    interactionService: interactionService,
-                    authService: authService
-                )
             }
 
             if detail.data.platforms == "ios" {
                 HStack(spacing: 8) {
+                    FavoriteButton(
+                        isFavorited: $isFavorited,
+                        isLoading: $isLoadingFavorite,
+                        softwareId: detail.data.id,
+                        interactionService: interactionService,
+                        authService: authService
+                    )
+                    
                     SubscribeButton(
                         isSubscribed: $isSubscribed,
                         isLoading: $isLoadingSubscribe,
@@ -646,6 +646,8 @@ struct InstallButton: View {
     let detail: AppDetailResponse
     let highSpeedDownloadService: HighSpeedDownloadService
     let authService: AuthService
+    @State private var showChannelSelection = false
+    @State private var downloadLinks: [HighSpeedDownloadLink] = []
 
     var body: some View {
         Button(action: {
@@ -655,17 +657,11 @@ struct InstallButton: View {
                 if let latestVersion = detail.data.versions.last {
                     isLoading = true
                     Task {
-                        await highSpeedDownloadService.getHighSpeedDownloadLinks(
-                            versionId: latestVersion.id,
-                            appName: detail.data.appName,
-                            appVersion: detail.data.version,
-                            appIcon: detail.data.appIcon
-                        )
+                        downloadLinks = await highSpeedDownloadService.getHighSpeedDownloadLinks(versionId: latestVersion.id)
                         isLoading = false
 
-                        if !highSpeedDownloadService.downloadRecords.isEmpty {
-                            let firstRecord = highSpeedDownloadService.downloadRecords.last!
-                            highSpeedDownloadService.startDownload(record: firstRecord)
+                        if !downloadLinks.isEmpty {
+                            showChannelSelection = true
                         } else {
                             showErrorAlert(message: "无法获取下载链接")
                         }
@@ -688,6 +684,129 @@ struct InstallButton: View {
         }
         .buttonStyle(.plain)
         .disabled(isLoading)
+        .sheet(isPresented: $showChannelSelection) {
+            ChannelSelectionView(
+                isPresented: $showChannelSelection,
+                downloadLinks: downloadLinks,
+                appName: detail.data.appName,
+                appVersion: detail.data.version,
+                appIcon: detail.data.appIcon,
+                highSpeedDownloadService: highSpeedDownloadService
+            )
+        }
+    }
+}
+
+struct ChannelSelectionView: View {
+    @Binding var isPresented: Bool
+    let downloadLinks: [HighSpeedDownloadLink]
+    let appName: String
+    let appVersion: String
+    let appIcon: String?
+    let highSpeedDownloadService: HighSpeedDownloadService
+    @State private var selectedChannel: HighSpeedDownloadLink?
+
+    var body: some View {
+        VStack(spacing: 24) {
+            HStack {
+                Text("选择下载通道")
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.primary)
+                Spacer()
+                Button(action: {
+                    isPresented = false
+                }) {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 20))
+                        .foregroundColor(.secondary)
+                }
+            }
+
+            VStack(spacing: 12) {
+                ForEach(downloadLinks, id: \.id) { link in
+                    Button(action: {
+                        selectedChannel = link
+                    }) {
+                        HStack(spacing: 16) {
+                            Image(systemName: "arrow.right.circle")
+                                .font(.system(size: 20))
+                                .foregroundColor(selectedChannel?.id == link.id ? .blue : .secondary)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(link.channel)
+                                    .font(.system(size: 16, weight: .semibold))
+                                    .foregroundColor(.primary)
+                                Text(link.url)
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.secondary)
+                                    .lineLimit(1)
+                            }
+                            Spacer()
+                            if selectedChannel?.id == link.id {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.blue)
+                            }
+                        }
+                        .padding(16)
+                        .background(
+                            selectedChannel?.id == link.id ?
+                                Color.blue.opacity(0.1) :
+                                Color(.controlBackgroundColor)
+                        )
+                        .cornerRadius(8)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(.vertical, 8)
+
+            Button(action: {
+                if let channel = selectedChannel {
+                    let record = DownloadRecord(
+                        id: UUID(),
+                        appName: appName,
+                        appVersion: appVersion,
+                        downloadUrl: channel.url,
+                        channel: channel.channel,
+                        appIcon: appIcon,
+                        downloadPath: nil,
+                        fileSize: 0,
+                        downloadedSize: 0,
+                        status: .pending,
+                        startTime: Date(),
+                        endTime: nil
+                    )
+                    highSpeedDownloadService.downloadRecords.append(record)
+                    highSpeedDownloadService.saveDownloadRecords()
+                    highSpeedDownloadService.startDownload(record: record)
+                    isPresented = false
+                } else {
+                    showErrorAlert(message: "请选择一个下载通道")
+                }
+            }) {
+                HStack(spacing: 8) {
+                    Image(systemName: "arrow.down.to.line.and.arrow.up.from.line")
+                        .font(.system(size: 16))
+                    Text("开始下载并安装")
+                        .font(.system(size: 16, weight: .semibold))
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 12)
+                .background(
+                    LinearGradient(
+                        gradient: Gradient(colors: [Color(red: 0.2, green: 0.7, blue: 0.3), Color(red: 0.1, green: 0.6, blue: 0.2)]),
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                )
+                .foregroundColor(.white)
+                .cornerRadius(8)
+                .shadow(color: .black.opacity(0.15), radius: 6, x: 0, y: 3)
+            }
+            .disabled(selectedChannel == nil)
+        }
+        .padding(24)
+        .frame(maxWidth: 400)
     }
 }
 

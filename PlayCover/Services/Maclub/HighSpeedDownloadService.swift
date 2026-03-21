@@ -19,7 +19,7 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
         loadDefaultDownloadPath()
     }
     
-    func getHighSpeedDownloadLinks(versionId: Int, appName: String = "", appVersion: String = "", appIcon: String? = nil) async {
+    func getHighSpeedDownloadLinks(versionId: Int) async -> [HighSpeedDownloadLink] {
         isLoading = true
         error = nil
         
@@ -28,7 +28,7 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
         guard let url = URL(string: urlString) else {
             error = "Invalid URL"
             isLoading = false
-            return
+            return []
         }
         
         var request = URLRequest(url: url)
@@ -43,39 +43,25 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 error = "Invalid response"
                 isLoading = false
-                return
+                return []
             }
             
             let decoder = JSONDecoder()
             let result = try decoder.decode(HighSpeedDownloadResponse.self, from: data)
             
+            isLoading = false
+            
             if result.code == 200 {
-                for link in result.data {
-                    var record = DownloadRecord(
-                        id: UUID(),
-                        appName: appName,
-                        appVersion: appVersion,
-                        downloadUrl: link.url,
-                        channel: link.channel,
-                        appIcon: appIcon,
-                        downloadPath: nil,
-                        fileSize: 0,
-                        downloadedSize: 0,
-                        status: .pending,
-                        startTime: Date(),
-                        endTime: nil
-                    )
-                    downloadRecords.append(record)
-                    saveDownloadRecords()
-                }
+                return result.data
             } else {
                 error = result.message
+                return []
             }
         } catch {
             self.error = error.localizedDescription
+            isLoading = false
+            return []
         }
-        
-        isLoading = false
     }
     
     func startDownload(record: DownloadRecord) {

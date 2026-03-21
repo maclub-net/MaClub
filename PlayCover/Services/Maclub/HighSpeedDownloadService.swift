@@ -77,14 +77,18 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
         guard let taskDescription = downloadTask.taskDescription, let recordId = UUID(uuidString: taskDescription) else { return }
         
-        updateDownloadProgress(recordId: recordId, downloadedSize: totalBytesWritten, totalSize: totalBytesExpectedToWrite)
-        calculateDownloadSpeed(recordId: recordId, bytesWritten: bytesWritten)
+        DispatchQueue.main.async {
+            self.updateDownloadProgress(recordId: recordId, downloadedSize: totalBytesWritten, totalSize: totalBytesExpectedToWrite)
+            self.calculateDownloadSpeed(recordId: recordId, bytesWritten: bytesWritten)
+        }
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         guard let taskDescription = downloadTask.taskDescription, let recordId = UUID(uuidString: taskDescription) else { return }
         guard let response = downloadTask.response as? HTTPURLResponse else {
-            updateDownloadStatus(recordId: recordId, status: .failed)
+            DispatchQueue.main.async {
+                self.updateDownloadStatus(recordId: recordId, status: .failed)
+            }
             return
         }
         
@@ -97,14 +101,18 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
             }
             try FileManager.default.moveItem(at: location, to: destinationUrl)
             
-            updateDownloadPath(recordId: recordId, path: destinationUrl.path)
-            updateDownloadStatus(recordId: recordId, status: .completed)
-            updateEndTime(recordId: recordId, time: Date())
-            
-            // 自动安装IPA文件
-            installIPA(at: destinationUrl)
+            DispatchQueue.main.async {
+                self.updateDownloadPath(recordId: recordId, path: destinationUrl.path)
+                self.updateDownloadStatus(recordId: recordId, status: .completed)
+                self.updateEndTime(recordId: recordId, time: Date())
+                
+                // 自动安装IPA文件
+                self.installIPA(at: destinationUrl)
+            }
         } catch {
-            updateDownloadStatus(recordId: recordId, status: .failed)
+            DispatchQueue.main.async {
+                self.updateDownloadStatus(recordId: recordId, status: .failed)
+            }
         }
         
         downloadTasks.removeValue(forKey: recordId)
@@ -114,8 +122,10 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
         guard let taskDescription = task.taskDescription, let recordId = UUID(uuidString: taskDescription) else { return }
         
         if error != nil {
-            updateDownloadStatus(recordId: recordId, status: .failed)
-            downloadTasks.removeValue(forKey: recordId)
+            DispatchQueue.main.async {
+                self.updateDownloadStatus(recordId: recordId, status: .failed)
+                self.downloadTasks.removeValue(forKey: recordId)
+            }
         }
     }
     

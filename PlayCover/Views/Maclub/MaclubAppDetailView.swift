@@ -734,10 +734,11 @@ struct ChannelSelectionView: View {
 
     private var channelListView: some View {
         VStack(spacing: 12) {
-            ForEach(downloadLinks, id: \.id) { link in
+            ForEach(downloadLinks.indices, id: \.self) { index in
+                let link = downloadLinks[index]
                 ChannelItemView(
                     link: link,
-                    isSelected: selectedChannel?.id == link.id,
+                    isSelected: selectedChannel?.url == link.url && selectedChannel?.channel == link.channel,
                     onSelect: {
                         selectedChannel = link
                     }

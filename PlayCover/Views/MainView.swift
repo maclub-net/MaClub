@@ -69,7 +69,7 @@ struct MainView: View {
                             showUserProfile: $showMaclubUserProfile
                         )
                     }
-                    .frame(minWidth: 150)
+                    .frame(minWidth: 220)
                     .toolbar {
                         ToolbarItem {
                             Button {

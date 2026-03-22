@@ -35,9 +35,6 @@ struct MaclubToolLibraryView: View {
         .sheet(isPresented: $showUserProfile) {
             MaclubUserProfileView()
         }
-        .onReceive(NotificationCenter.default.publisher(for: .showLoginSheet)) { _ in
-            showLoginSheet = true
-        }
     }
 }
 

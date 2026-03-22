@@ -93,7 +93,7 @@ struct MaclubUserProfileView: View {
                 
                 if !user.isVIPValid {
                     VStack(spacing: 8) {
-                        Text("需要VIP才能使用工具")
+                        Text("VIP可以使用更多工具")
                             .font(.caption)
                             .foregroundColor(.secondary)
                         

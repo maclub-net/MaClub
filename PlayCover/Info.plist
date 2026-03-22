@@ -96,7 +96,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>net.maclub.www-playmap</string>
+			<string>io.playcover.PlayCover-playmap</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

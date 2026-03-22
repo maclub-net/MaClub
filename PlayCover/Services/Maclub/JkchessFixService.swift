@@ -4,7 +4,7 @@ class JkchessFixService {
     private let shellService = ShellService.shared
     
     func fixMicrophone() async -> (success: Bool, output: String, error: String) {
-        let executable = "~/Library/Containers/net.maclub.www/Applications/com.tencent.jkchess.app/jkchess"
+        let executable = "~/Library/Containers/io.playcover.PlayCover/Applications/com.tencent.jkchess.app/jkchess"
         let expandedPath = await shellService.expandPath(executable)
         
         let exists = await shellService.checkFileExists(at: expandedPath)
@@ -60,7 +60,7 @@ https://www.maclub.net/appstore/01KJ4XB1N268SF2J14GKQ3TVFS
     }
     
     func fixOrientation() async -> (success: Bool, output: String, error: String) {
-        let executable = "~/Library/Containers/net.maclub.www/Applications/com.tencent.jkchess.app/Frameworks/MSDKWebView.framework/MSDKWebView"
+        let executable = "~/Library/Containers/io.playcover.PlayCover/Applications/com.tencent.jkchess.app/Frameworks/MSDKWebView.framework/MSDKWebView"
         let expandedPath = await shellService.expandPath(executable)
         
         let exists = await shellService.checkFileExists(at: expandedPath)

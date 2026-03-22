@@ -86,7 +86,7 @@ extension URL {
         }
 
         let queue = OperationQueue()
-        queue.name = "net.maclub.www.URLExtension"
+        queue.name = "io.playcover.PlayCover.URLExtension"
         queue.qualityOfService = .userInitiated
         queue.maxConcurrentOperationCount = 15
 

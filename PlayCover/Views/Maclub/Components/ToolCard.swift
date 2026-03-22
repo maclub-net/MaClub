@@ -79,6 +79,7 @@ struct ToolDetailView: View {
     @StateObject private var fixService = FixService()
     @StateObject private var authService = AuthService.shared
     @State private var isCloseButtonHovered = false
+    @State private var showVipAlert = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -181,6 +182,8 @@ struct ToolDetailView: View {
                         Task {
                             await fixService.executeFix(tool: tool)
                         }
+                    } else if authService.isAuthenticated {
+                        showVipAlert = true
                     } else {
                         NotificationCenter.default.post(name: .showLoginSheet, object: nil)
                     }
@@ -220,5 +223,15 @@ struct ToolDetailView: View {
         .background(Color(nsColor: .windowBackgroundColor))
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .shadow(color: .black.opacity(0.2), radius: 20, x: 0, y: 10)
+        .alert("开通VIP", isPresented: $showVipAlert) {
+            Button("取消", role: .cancel) {}
+            Button("去开通") {
+                if let url = URL(string: "https://www.maclub.net") {
+                    NSWorkspace.shared.open(url)
+                }
+            }
+        } message: {
+            Text("您的VIP已过期或未激活，请续费或购买VIP服务")
+        }
     }
 }

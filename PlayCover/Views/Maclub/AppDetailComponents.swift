@@ -312,18 +312,21 @@ struct HighSpeedDownloadButton: View {
     @Binding var highSpeedDownloadLinks: [HighSpeedDownloadLink]
     let detail: AppDetailResponse
     let authService: AuthService
+    @State private var showVipAlert = false
 
     var body: some View {
         Button(action: {
             guard !isLoading else { return }
 
-            if authService.isAuthenticated {
+            if authService.canUseTools() {
                 if let latestVersion = detail.data.versions.last {
                     isLoading = true
                     Task {
                         await fetchHighSpeedLinks(versionId: latestVersion.id)
                     }
                 }
+            } else if authService.isAuthenticated {
+                showVipAlert = true
             } else {
                 NotificationCenter.default.post(name: .showLoginSheet, object: nil)
             }
@@ -341,6 +344,16 @@ struct HighSpeedDownloadButton: View {
         }
         .buttonStyle(.plain)
         .disabled(isLoading)
+        .alert("开通VIP", isPresented: $showVipAlert) {
+            Button("取消", role: .cancel) {}
+            Button("去开通") {
+                if let url = URL(string: "https://www.maclub.net") {
+                    NSWorkspace.shared.open(url)
+                }
+            }
+        } message: {
+            Text("高速下载是VIP专属功能，请先开通VIP服务")
+        }
     }
 
     private func fetchHighSpeedLinks(versionId: Int) async {
@@ -554,13 +567,14 @@ struct InstallButton: View {
     let highSpeedDownloadService: HighSpeedDownloadService
     let authService: AuthService
     @State private var showChannelSelection = false
+    @State private var showVipAlert = false
     @State private var downloadLinks: [HighSpeedDownloadLink] = []
 
     var body: some View {
         Button(action: {
             guard !isLoading else { return }
 
-            if authService.isAuthenticated {
+            if authService.canUseTools() {
                 if let latestVersion = detail.data.versions.last {
                     isLoading = true
                     Task {
@@ -574,6 +588,8 @@ struct InstallButton: View {
                         }
                     }
                 }
+            } else if authService.isAuthenticated {
+                showVipAlert = true
             } else {
                 NotificationCenter.default.post(name: .showLoginSheet, object: nil)
             }
@@ -600,6 +616,16 @@ struct InstallButton: View {
                 appIcon: detail.data.appIcon,
                 highSpeedDownloadService: highSpeedDownloadService
             )
+        }
+        .alert("开通VIP", isPresented: $showVipAlert) {
+            Button("取消", role: .cancel) {}
+            Button("去开通") {
+                if let url = URL(string: "https://www.maclub.net") {
+                    NSWorkspace.shared.open(url)
+                }
+            }
+        } message: {
+            Text("立即安装是VIP专属功能，请先开通VIP服务")
         }
     }
 }

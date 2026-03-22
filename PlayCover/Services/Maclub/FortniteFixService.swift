@@ -5,8 +5,8 @@ class FortniteFixService {
     
     func fixEntitlementIssue() async -> (success: Bool, output: String, error: String) {
         let userHome = NSHomeDirectory()
-        let entitlementsSource = "\(userHome)/Library/Containers/net.maclub.www/Entitlements/com.epicgames.FortniteGame.plist"
-        let embeddedDest = "\(userHome)/Library/Containers/net.maclub.www/Applications/com.epicgames.FortniteGame.app/embedded.mobileprovision"
+        let entitlementsSource = "\(userHome)/Library/Containers/io.playcover.PlayCover/Entitlements/com.epicgames.FortniteGame.plist"
+        let embeddedDest = "\(userHome)/Library/Containers/io.playcover.PlayCover/Applications/com.epicgames.FortniteGame.app/embedded.mobileprovision"
         
         let entitlementsExists = await shellService.checkFileExists(at: entitlementsSource)
         guard entitlementsExists else {
@@ -30,7 +30,7 @@ class FortniteFixService {
     
     func fixMemoryIssue() async -> (success: Bool, output: String, error: String) {
         let userHome = NSHomeDirectory()
-        let executable = "\(userHome)/Library/Containers/net.maclub.www/Applications/com.epicgames.FortniteGame.app/FortniteClient-IOS-Shipping"
+        let executable = "\(userHome)/Library/Containers/io.playcover.PlayCover/Applications/com.epicgames.FortniteGame.app/FortniteClient-IOS-Shipping"
         
         let executableExists = await shellService.checkFileExists(at: executable)
         guard executableExists else {
@@ -70,7 +70,7 @@ class FortniteFixService {
     
     func fixFirstResponderIssue() async -> (success: Bool, output: String, error: String) {
         let userHome = NSHomeDirectory()
-        let executable = "\(userHome)/Library/Containers/net.maclub.www/Applications/com.epicgames.FortniteGame.app/FortniteClient-IOS-Shipping"
+        let executable = "\(userHome)/Library/Containers/io.playcover.PlayCover/Applications/com.epicgames.FortniteGame.app/FortniteClient-IOS-Shipping"
         
         let executableExists = await shellService.checkFileExists(at: executable)
         guard executableExists else {

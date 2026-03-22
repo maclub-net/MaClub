@@ -7,7 +7,7 @@ struct FixButton: View {
     
     @State private var isHovered = false
     @StateObject private var authService = AuthService.shared
-    @State private var showLoginAlert = false
+    @State private var showVipAlert = false
     
     init(title: String = "执行修复", isExecuting: Bool = false, action: @escaping () async -> Void) {
         self.title = title
@@ -18,7 +18,7 @@ struct FixButton: View {
     var body: some View {
         Button {
             if !authService.canUseTools() {
-                showLoginAlert = true
+                showVipAlert = true
                 return
             }
             
@@ -47,12 +47,21 @@ struct FixButton: View {
         .buttonStyle(.plain)
         .disabled(isExecuting)
         .animation(.easeInOut(duration: 0.2), value: isExecuting)
-        .alert("需要VIP权限", isPresented: $showLoginAlert) {
-            Button("取消", role: .cancel) { }
-            Button("登录") {
-                showLoginAlert = false
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    NotificationCenter.default.post(name: .showLoginSheet, object: nil)
+        .alert("开通VIP", isPresented: $showVipAlert) {
+            if !authService.isAuthenticated {
+                Button("取消", role: .cancel) {}
+                Button("登录") {
+                    showVipAlert = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        NotificationCenter.default.post(name: .showLoginSheet, object: nil)
+                    }
+                }
+            } else {
+                Button("取消", role: .cancel) {}
+                Button("去开通") {
+                    if let url = URL(string: "https://www.maclub.net") {
+                        NSWorkspace.shared.open(url)
+                    }
                 }
             }
         } message: {

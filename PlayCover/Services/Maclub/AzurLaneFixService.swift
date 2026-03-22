@@ -4,7 +4,7 @@ class AzurLaneFixService {
     private let shellService = ShellService.shared
     
     func fixKeyMappingIssue() async -> (success: Bool, output: String, error: String) {
-        let executable = "~/Library/Containers/net.maclub.www/Applications/com.bilibili.azurlane.app/Frameworks/UnityFramework.framework/UnityFramework"
+        let executable = "~/Library/Containers/io.playcover.PlayCover/Applications/com.bilibili.azurlane.app/Frameworks/UnityFramework.framework/UnityFramework"
         let expandedPath = await shellService.expandPath(executable)
         
         let exists = await shellService.checkFileExists(at: expandedPath)

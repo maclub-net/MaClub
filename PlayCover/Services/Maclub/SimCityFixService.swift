@@ -4,8 +4,8 @@ class SimCityFixService {
     private let shellService = ShellService.shared
     
     func fixCrash() async -> (success: Bool, output: String, error: String) {
-        let appPath = "~/Library/Containers/net.maclub.www/Applications/com.ea.simcitymobile.bv.app"
-        let frameworkPath = "~/Library/Containers/net.maclub.www/Applications/com.ea.simcitymobile.bv.app/Frameworks/anzu.sdk.framework/anzu.sdk"
+        let appPath = "~/Library/Containers/io.playcover.PlayCover/Applications/com.ea.simcitymobile.bv.app"
+        let frameworkPath = "~/Library/Containers/io.playcover.PlayCover/Applications/com.ea.simcitymobile.bv.app/Frameworks/anzu.sdk.framework/anzu.sdk"
         
         let expandedAppPath = await shellService.expandPath(appPath)
         let expandedFrameworkPath = await shellService.expandPath(frameworkPath)

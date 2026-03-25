@@ -347,7 +347,7 @@ struct HighSpeedDownloadButton: View {
         .alert("开通VIP", isPresented: $showVipAlert) {
             Button("取消", role: .cancel) {}
             Button("去开通") {
-                if let url = URL(string: "https://www.maclub.net") {
+                if let url = URL(string: "https://www.maclub.net/my/vip") {
                     NSWorkspace.shared.open(url)
                 }
             }
@@ -620,7 +620,7 @@ struct InstallButton: View {
         .alert("开通VIP", isPresented: $showVipAlert) {
             Button("取消", role: .cancel) {}
             Button("去开通") {
-                if let url = URL(string: "https://www.maclub.net") {
+                if let url = URL(string: "https://www.maclub.net/my/vip") {
                     NSWorkspace.shared.open(url)
                 }
             }

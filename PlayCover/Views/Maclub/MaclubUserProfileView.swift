@@ -98,7 +98,7 @@ struct MaclubUserProfileView: View {
                             .foregroundColor(.secondary)
                         
                         Button(action: {
-                            if let url = URL(string: "https://www.maclub.net") {
+                            if let url = URL(string: "https://www.maclub.net/my/vip") {
                                 NSWorkspace.shared.open(url)
                             }
                         }) {

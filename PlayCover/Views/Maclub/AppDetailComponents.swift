@@ -62,7 +62,7 @@ struct AppDetailHeaderView: View {
         .padding(16)
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color(.controlBackgroundColor))
+                .fill(Color(.textBackgroundColor))
                 .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
         )
     }

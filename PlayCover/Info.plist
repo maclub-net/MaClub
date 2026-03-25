@@ -81,9 +81,9 @@
 	<key>NSSystemAdministrationUsageDescription</key>
 	<string>Mac俱乐部 needs to read files to save apps</string>
 	<key>SUFeedURL</key>
-	<string>https://raw.githubusercontent.com/PlayCover/PlayCover/update/appcast.xml</string>
+	<string>https://www.maclub.net/update/appcast.xml</string>
 	<key>SUPublicEDKey</key>
-	<string>YzgQIwegeMGJxhosWRn/1IyEeEe385xcKE3cXeewlK0=</string>
+	<string>OoSirro/4Zce/5i99URZqrVE28Hx2Vh0Sf735x1+TRM=</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>

@@ -7,10 +7,8 @@ class FortniteAppData {
             id: "01KHTCFFKQFK7TGFC2M470A1ZM",
             name: "Fortnite堡垒之夜",
             bundleIdentifier: "com.epicgames.FortniteGame",
-            logoName: "fortnite",
             description: "Epic Games出品的多人在线射击游戏",
-            tools: tools,
-            downloadURL: URL(string: "https://www.maclub.net/appstore/01KHTCFFKQFK7TGFC2M470A1ZM")
+            tools: tools
         )
     }
     

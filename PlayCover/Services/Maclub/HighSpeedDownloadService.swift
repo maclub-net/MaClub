@@ -10,6 +10,7 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
     private var downloadTasks: [UUID: URLSessionDownloadTask] = [:]
     private var session: URLSession!
     private var cancellables = Set<AnyCancellable>()
+    private let api = MaclubBaseService.shared
     
     override init() {
         super.init()
@@ -27,33 +28,12 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
         
         let urlString = "https://www.maclub.net/appstore/dl/\(versionId)/vip"
         
-        guard let url = URL(string: urlString) else {
-            DispatchQueue.main.async {
-                self.error = "Invalid URL"
-                self.isLoading = false
-            }
-            return []
-        }
-        
-        var request = URLRequest(url: url)
-        
-        if let token = UserDefaults.standard.string(forKey: "auth_token") {
-            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
-        
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
-            
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                DispatchQueue.main.async {
-                    self.error = "Invalid response"
-                    self.isLoading = false
-                }
-                return []
-            }
-            
-            let decoder = JSONDecoder()
-            let result = try decoder.decode(HighSpeedDownloadResponse.self, from: data)
+            let result: HighSpeedDownloadResponse = try await api.requestWithURL(
+                urlString: urlString,
+                method: "GET",
+                requiresAuth: api.isAuthenticated
+            )
             
             DispatchQueue.main.async {
                 self.isLoading = false
@@ -69,7 +49,11 @@ class HighSpeedDownloadService: NSObject, ObservableObject, URLSessionDownloadDe
             }
         } catch {
             DispatchQueue.main.async {
-                self.error = error.localizedDescription
+                if let apiError = error as? MaclubAPIError {
+                    self.error = apiError.errorDescription
+                } else {
+                    self.error = error.localizedDescription
+                }
                 self.isLoading = false
             }
             return []

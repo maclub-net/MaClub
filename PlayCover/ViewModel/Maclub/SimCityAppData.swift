@@ -7,10 +7,8 @@ class SimCityAppData {
             id: "01JWJJ9ZGV42F8KE6243AHAM6R",
             name: "SimCity (美区)",
             bundleIdentifier: "com.ea.simcitymobile.bv",
-            logoName: "simcity",
             description: "经典城市建造模拟游戏（美区版本）",
-            tools: tools,
-            downloadURL: URL(string: "https://www.maclub.net/appstore/01JWJJ9ZGV42F8KE6243AHAM6R")
+            tools: tools
         )
     }
     

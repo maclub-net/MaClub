@@ -7,10 +7,8 @@ class JkchessAppData {
             id: "01HSACVCTS7DR867TASMYXP3GG",
             name: "金铲铲之战",
             bundleIdentifier: "com.tencent.jkchess",
-            logoName: "jkchess",
             description: "腾讯自研英雄策略对战手游",
-            tools: tools,
-            downloadURL: URL(string: "https://www.maclub.net/appstore/01HSACVCTS7DR867TASMYXP3GG")
+            tools: tools
         )
     }
     

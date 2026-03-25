@@ -155,7 +155,7 @@ struct MaclubHomeView: View {
         .padding(.vertical, 12)
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .fill(Color(NSColor.controlBackgroundColor))
+                .fill(Color(NSColor.textBackgroundColor))
                 .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
         )
     }
@@ -230,7 +230,7 @@ struct SearchAppCard: View {
         .padding(20)
         .background(
             RoundedRectangle(cornerRadius: 16)
-                .fill(Color(NSColor.controlBackgroundColor))
+                .fill(Color(NSColor.textBackgroundColor))
                 .shadow(color: .black.opacity(0.1), radius: 6, x: 0, y: 3)
         )
         .overlay(

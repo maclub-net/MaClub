@@ -6,51 +6,23 @@ class AppDetailService: ObservableObject {
     @Published var isLoading = false
     @Published var error: Error?
     
+    private let api = MaclubBaseService.shared
+    
     func fetchAppDetail(id: String) async {
         isLoading = true
         error = nil
         
-        let urlString = "https://www.maclub.net/api/software/\(id)"
         print("Fetching app detail for ID: \(id)")
-        print("URL: \(urlString)")
-        
-        guard let url = URL(string: urlString) else {
-            print("Invalid URL")
-            error = NSError(domain: "AppDetailService", code: 1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
-            isLoading = false
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        
-        if let token = UserDefaults.standard.string(forKey: "auth_token") {
-            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
         
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let response: AppDetailResponse = try await api.request(
+                endpoint: "/software/\(id)",
+                method: "GET",
+                requiresAuth: api.isAuthenticated
+            )
             
-            guard let httpResponse = response as? HTTPURLResponse else {
-                print("Invalid response type")
-                error = NSError(domain: "AppDetailService", code: 2, userInfo: [NSLocalizedDescriptionKey: "Invalid response"])
-                isLoading = false
-                return
-            }
-            
-            print("HTTP Status Code: \(httpResponse.statusCode)")
-            
-            guard httpResponse.statusCode == 200 else {
-                print("HTTP Error: \(httpResponse.statusCode)")
-                error = NSError(domain: "AppDetailService", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: "HTTP Error: \(httpResponse.statusCode)"])
-                isLoading = false
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            let appDetailResponse = try decoder.decode(AppDetailResponse.self, from: data)
-            appDetail = appDetailResponse.data
+            appDetail = response.data
             print("Successfully loaded app detail: \(appDetail?.appName ?? "Unknown")")
-            
         } catch {
             print("Error fetching app detail: \(error)")
             if let decodingError = error as? DecodingError {

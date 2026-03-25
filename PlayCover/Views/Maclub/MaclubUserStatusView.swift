@@ -43,15 +43,6 @@ struct MaclubUserStatusView: View {
                     }
                 }
                 
-                Spacer()
-                
-                Button(action: {
-                    showUserProfile = true
-                }) {
-                    Image(systemName: "ellipsis.circle")
-                        .foregroundColor(.secondary)
-                }
-                .buttonStyle(.plain)
             } else {
                 Image(systemName: "person.circle.fill")
                     .resizable()
@@ -67,13 +58,10 @@ struct MaclubUserStatusView: View {
                         .font(.caption2)
                         .foregroundColor(.secondary)
                 }
-                
-                Spacer()
             }
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
-        .background(Color(nsColor: .controlBackgroundColor))
         .contentShape(Rectangle())
         .onTapGesture {
             if authService.isAuthenticated {

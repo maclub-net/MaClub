@@ -80,7 +80,7 @@ struct ToolAppCard: View {
         }
         .frame(maxWidth: .infinity)
         .padding(20)
-        .background(Color(.controlBackgroundColor))
+        .background(Color(.textBackgroundColor))
         .cornerRadius(12)
         .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
     }

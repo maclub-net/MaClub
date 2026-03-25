@@ -12,7 +12,7 @@ class SearchService: ObservableObject {
     @Published var totalPages: Int = 1
     @Published var totalResults: Int = 0
     
-    private let baseURL = "https://www.maclub.net/api"
+    private let api = MaclubBaseService.shared
     
     private init() {}
     
@@ -26,59 +26,30 @@ class SearchService: ObservableObject {
         errorMessage = nil
         
         let encodedKeyword = keyword.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? keyword
-        guard let url = URL(string: "\(baseURL)/search/software/\(encodedKeyword)?page=\(page)&per_page=\(perPage)") else {
-            errorMessage = "无效的搜索URL"
-            isLoading = false
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let endpoint = "/search/software/\(encodedKeyword)?page=\(page)&per_page=\(perPage)"
         
         do {
-            let (data, _) = try await URLSession.shared.data(for: request)
+            let response: SearchResponse = try await api.request(
+                endpoint: endpoint,
+                method: "GET",
+                requiresAuth: false
+            )
             
-            let decoder = JSONDecoder()
-            
-            do {
-                let response = try decoder.decode(SearchResponse.self, from: data)
-                if page == 1 {
-                    searchResults = response.data
-                } else {
-                    searchResults.append(contentsOf: response.data)
-                }
-                currentPage = response.meta.currentPage
-                totalPages = response.meta.lastPage
-                totalResults = response.meta.total
-            } catch {
-                print("解码错误详情: \(error)")
-                if let decodingError = error as? DecodingError {
-                    switch decodingError {
-                    case .keyNotFound(let key, let context):
-                        print("缺少键: \(key.stringValue), 路径: \(context.codingPath.map { $0.stringValue }.joined(separator: "."))")
-                    case .typeMismatch(let type, let context):
-                        print("类型不匹配: \(type), 路径: \(context.codingPath.map { $0.stringValue }.joined(separator: "."))")
-                    case .valueNotFound(let type, let context):
-                        print("值不存在: \(type), 路径: \(context.codingPath.map { $0.stringValue }.joined(separator: "."))")
-                    case .dataCorrupted(let context):
-                        print("数据损坏: \(context.debugDescription)")
-                    @unknown default:
-                        print("未知错误")
-                    }
-                }
-                
-                if let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-                   let message = json["message"] as? String {
-                    errorMessage = message
-                } else {
-                    errorMessage = "搜索失败，请稍后重试"
-                }
+            if page == 1 {
+                searchResults = response.data
+            } else {
+                searchResults.append(contentsOf: response.data)
             }
+            currentPage = response.meta.currentPage
+            totalPages = response.meta.lastPage
+            totalResults = response.meta.total
         } catch {
-            print("网络错误: \(error)")
-            errorMessage = "网络错误: \(error.localizedDescription)"
+            if let apiError = error as? MaclubAPIError {
+                errorMessage = apiError.errorDescription
+            } else {
+                errorMessage = "搜索失败，请稍后重试"
+            }
+            print("搜索错误: \(error)")
         }
         
         isLoading = false

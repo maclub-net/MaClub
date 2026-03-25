@@ -11,7 +11,7 @@ class AuthService: ObservableObject {
     
     private let tokenKey = "auth_token"
     private let userKey = "cached_user"
-    private let baseURL = "https://www.maclub.net/api"
+    private let api = MaclubBaseService.shared
     
     private init() {
         loadCachedUser()
@@ -34,84 +34,54 @@ class AuthService: ObservableObject {
         errorMessage = nil
         defer { isLoading = false }
         
-        guard let url = URL(string: "\(baseURL)/auth/login") else {
-            errorMessage = "无效的URL"
-            return
-        }
-        
-        let boundary = "Boundary-\(UUID().uuidString)"
-        var body = Data()
-        
-        let parameters = [
+        let parameters: [[String: Any]] = [
             ["key": "email", "value": email, "type": "text"],
             ["key": "password", "value": password, "type": "text"]
-        ] as [[String: Any]]
-        
-        for param in parameters {
-            guard let paramName = param["key"] as? String else { continue }
-            body += Data("--\(boundary)\r\n".utf8)
-            body += Data("Content-Disposition: form-data; name=\"\(paramName)\"\r\n\r\n".utf8)
-            if let paramValue = param["value"] as? String {
-                body += Data("\(paramValue)\r\n".utf8)
-            }
-        }
-        body += Data("--\(boundary)--\r\n".utf8)
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-        request.httpBody = body
+        ]
         
         do {
-            let (data, _) = try await URLSession.shared.data(for: request)
+            let response: AuthResponse = try await api.multipartRequest(
+                endpoint: "/auth/login",
+                parameters: parameters,
+                requiresAuth: false
+            )
             
-            if let response = try? JSONDecoder().decode(AuthResponse.self, from: data) {
-                if response.success, let authData = response.data {
-                    self.currentUser = authData.user
-                    self.isAuthenticated = true
-                    
-                    if let token = authData.token {
-                        UserDefaults.standard.set(token, forKey: tokenKey)
-                    }
-                    
-                    if let userData = try? JSONEncoder().encode(authData.user) {
-                        UserDefaults.standard.set(userData, forKey: userKey)
-                    }
-                    
-                    errorMessage = nil
-                } else {
-                    errorMessage = response.message ?? "登录失败"
+            if response.success, let authData = response.data {
+                self.currentUser = authData.user
+                self.isAuthenticated = true
+                
+                if let token = authData.token {
+                    UserDefaults.standard.set(token, forKey: tokenKey)
                 }
+                
+                if let userData = try? JSONEncoder().encode(authData.user) {
+                    UserDefaults.standard.set(userData, forKey: userKey)
+                }
+                
+                errorMessage = nil
             } else {
-                if let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-                   let message = json["message"] as? String {
-                    errorMessage = message
-                } else {
-                    errorMessage = "登录失败，请检查邮箱和密码"
-                }
+                errorMessage = response.message ?? "登录失败"
             }
         } catch {
-            errorMessage = "网络错误: \(error.localizedDescription)"
+            if let apiError = error as? MaclubAPIError {
+                errorMessage = apiError.errorDescription
+            } else {
+                errorMessage = "网络错误: \(error.localizedDescription)"
+            }
         }
     }
     
     func refreshUserInfo() async {
-        guard let token = UserDefaults.standard.string(forKey: tokenKey) else { return }
-        
-        guard let url = URL(string: "\(baseURL)/auth/me") else { return }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        guard api.currentToken != nil else { return }
         
         do {
-            let (data, _) = try await URLSession.shared.data(for: request)
+            let response: UserResponse = try await api.request(
+                endpoint: "/auth/me",
+                method: "GET",
+                requiresAuth: true
+            )
             
-            if let response = try? JSONDecoder().decode(UserResponse.self, from: data),
-               response.success {
+            if response.success {
                 self.currentUser = response.data?.user
                 
                 if let userData = try? JSONEncoder().encode(response.data?.user) {
@@ -128,6 +98,12 @@ class AuthService: ObservableObject {
         isAuthenticated = false
         UserDefaults.standard.removeObject(forKey: tokenKey)
         UserDefaults.standard.removeObject(forKey: userKey)
+    }
+    
+    func handleSessionExpired() {
+        currentUser = nil
+        isAuthenticated = false
+        errorMessage = "登录状态已过期，请重新登录"
     }
     
     func canUseTools() -> Bool {

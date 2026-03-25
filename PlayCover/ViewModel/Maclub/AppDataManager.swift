@@ -14,7 +14,8 @@ class AppDataManager {
             JkchessAppData.createApp(),
             SimCityAppData.createApp(),
             FortniteAppData.createApp(),
-            AzurLaneAppData.createApp()
+            AzurLaneAppData.createApp(),
+            RockKingdomAppData.createApp()
         ]
     }
 }

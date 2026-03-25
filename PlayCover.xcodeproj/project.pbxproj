@@ -20,6 +20,8 @@
 		53F3802826EB6F6B00D6B525 /* NotifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F3802726EB6F6B00D6B525 /* NotifyService.swift */; };
 		53F4D2A026C43C690020167C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F4D29F26C43C690020167C /* Log.swift */; };
 		53F50C4926E3CA42007AD2D3 /* AppLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F50C4826E3CA42007AD2D3 /* AppLibraryView.swift */; };
+		580D24E72F73B95F00CB6E85 /* MaclubBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580D24E62F73B95F00CB6E85 /* MaclubBaseService.swift */; };
+		580D24E92F73B97200CB6E85 /* RockKingdomAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580D24E82F73B97200CB6E85 /* RockKingdomAppData.swift */; };
 		587B0BBC2F6EC21100CB9B60 /* SearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B0BB82F6EC21100CB9B60 /* SearchApp.swift */; };
 		587B0BBD2F6EC21100CB9B60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B0BBA2F6EC21100CB9B60 /* User.swift */; };
 		587B0BBE2F6EC21100CB9B60 /* AppDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B0BB42F6EC21100CB9B60 /* AppDetailResponse.swift */; };
@@ -158,6 +160,8 @@
 		53F3802726EB6F6B00D6B525 /* NotifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyService.swift; sourceTree = "<group>"; };
 		53F4D29F26C43C690020167C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		53F50C4826E3CA42007AD2D3 /* AppLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLibraryView.swift; sourceTree = "<group>"; };
+		580D24E62F73B95F00CB6E85 /* MaclubBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaclubBaseService.swift; sourceTree = "<group>"; };
+		580D24E82F73B97200CB6E85 /* RockKingdomAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockKingdomAppData.swift; sourceTree = "<group>"; };
 		587B0BB42F6EC21100CB9B60 /* AppDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailResponse.swift; sourceTree = "<group>"; };
 		587B0BB52F6EC21100CB9B60 /* DownloadConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadConfig.swift; sourceTree = "<group>"; };
 		587B0BB62F6EC21100CB9B60 /* DownloadRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadRecord.swift; sourceTree = "<group>"; };
@@ -452,6 +456,7 @@
 		587B0BCF2F6EC22100CB9B60 /* Maclub */ = {
 			isa = PBXGroup;
 			children = (
+				580D24E62F73B95F00CB6E85 /* MaclubBaseService.swift */,
 				587B0BC32F6EC22100CB9B60 /* AppDetailService.swift */,
 				587B0BC42F6EC22100CB9B60 /* AuthService.swift */,
 				587B0BC52F6EC22100CB9B60 /* AzurLaneFixService.swift */,
@@ -471,6 +476,7 @@
 		587B0BE12F6EC23300CB9B60 /* Maclub */ = {
 			isa = PBXGroup;
 			children = (
+				580D24E82F73B97200CB6E85 /* RockKingdomAppData.swift */,
 				587B0BDC2F6EC23300CB9B60 /* AppDataManager.swift */,
 				587B0BDD2F6EC23300CB9B60 /* AzurLaneAppData.swift */,
 				587B0BDE2F6EC23300CB9B60 /* FortniteAppData.swift */,
@@ -841,6 +847,7 @@
 				587B0BD22F6EC22100CB9B60 /* HighSpeedDownloadService.swift in Sources */,
 				587B0BD32F6EC22100CB9B60 /* FixService.swift in Sources */,
 				587B0BD42F6EC22100CB9B60 /* DownloadService.swift in Sources */,
+				580D24E92F73B97200CB6E85 /* RockKingdomAppData.swift in Sources */,
 				587B0BD52F6EC22100CB9B60 /* JkchessFixService.swift in Sources */,
 				587B0BD62F6EC22100CB9B60 /* AuthService.swift in Sources */,
 				587B0BD72F6EC22100CB9B60 /* SimCityFixService.swift in Sources */,
@@ -898,6 +905,7 @@
 				587B0BBF2F6EC21100CB9B60 /* ToolModel.swift in Sources */,
 				587B0BC02F6EC21100CB9B60 /* DownloadConfig.swift in Sources */,
 				587B0BC12F6EC21100CB9B60 /* FixApp.swift in Sources */,
+				580D24E72F73B95F00CB6E85 /* MaclubBaseService.swift in Sources */,
 				587B0BC22F6EC21100CB9B60 /* DownloadRecord.swift in Sources */,
 				9286D296273A7E4200958DD3 /* AppSettings.swift in Sources */,
 				B68FD80D2ACB642100683778 /* PlayAppExtensions.swift in Sources */,
@@ -1010,7 +1018,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 101;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "PlayCover/Preview\\ Content";
@@ -1026,10 +1034,10 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = net.maclub.www;
+				PRODUCT_BUNDLE_IDENTIFIER = net.maclub.PlayCover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				RUN_DOCUMENTATION_COMPILER = NO;
@@ -1114,7 +1122,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 101;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "PlayCover/Preview\\ Content";
@@ -1130,10 +1138,10 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = net.maclub.www;
+				PRODUCT_BUNDLE_IDENTIFIER = net.maclub.PlayCover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				RUN_DOCUMENTATION_COMPILER = NO;
@@ -1187,10 +1195,10 @@
 		};
 		68E48B98295708C800C39879 /* XCRemoteSwiftPackageReference "inject" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/paradiseduo/inject";
+			repositoryURL = "https://github.com/riverfjs/inject";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 		68E48B9D29570A0400C39879 /* XCRemoteSwiftPackageReference "DataCache" */ = {

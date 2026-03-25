@@ -7,10 +7,8 @@ class AzurLaneAppData {
             id: "01J3XJDVHV0W1Q6Q7QXXRQB29Y",
             name: "碧蓝航线",
             bundleIdentifier: "com.bilibili.azurlane",
-            logoName: "azurlane",
             description: "bilibili出品的即时海战手游",
-            tools: tools,
-            downloadURL: URL(string: "https://www.maclub.net/appstore/01J3XJDVHV0W1Q6Q7QXXRQB29Y")
+            tools: tools
         )
     }
     

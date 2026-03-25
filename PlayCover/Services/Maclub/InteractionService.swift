@@ -5,17 +5,12 @@ class InteractionService: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     
-    private let baseURL = "https://www.maclub.net/api"
+    private let api = MaclubBaseService.shared
     
     func toggleFavorite(softwareId: String) async -> Bool {
         isLoading = true
         errorMessage = nil
         defer { isLoading = false }
-        
-        guard let url = URL(string: "\(baseURL)/favorite/toggle") else {
-            errorMessage = "无效的URL"
-            return false
-        }
         
         let requestBody: [String: String] = [
             "favoriteable_type": "software",
@@ -27,34 +22,26 @@ class InteractionService: ObservableObject {
             return false
         }
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        if let token = UserDefaults.standard.string(forKey: "auth_token") {
-            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
-        
-        request.httpBody = bodyData
-        
         do {
-            let (data, _) = try await URLSession.shared.data(for: request)
+            let response = try await api.requestJSON(
+                endpoint: "/favorite/toggle",
+                method: "POST",
+                body: bodyData,
+                requiresAuth: true
+            )
             
-            if let response = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                let code = response["code"] as? Int ?? 0
-                if code == 200 {
-                    return true
-                } else {
-                    errorMessage = response["message"] as? String ?? "操作失败"
-                    return false
-                }
+            if let code = response["code"] as? Int, code == 200 {
+                return true
             } else {
-                errorMessage = "无效的响应格式"
+                errorMessage = response["message"] as? String ?? "操作失败"
                 return false
             }
         } catch {
-            errorMessage = "网络错误: \(error.localizedDescription)"
+            if let apiError = error as? MaclubAPIError {
+                errorMessage = apiError.errorDescription
+            } else {
+                errorMessage = "网络错误: \(error.localizedDescription)"
+            }
             return false
         }
     }
@@ -63,11 +50,6 @@ class InteractionService: ObservableObject {
         isLoading = true
         errorMessage = nil
         defer { isLoading = false }
-        
-        guard let url = URL(string: "\(baseURL)/subscribe/toggle") else {
-            errorMessage = "无效的URL"
-            return false
-        }
         
         let requestBody: [String: String] = [
             "software_id": softwareId
@@ -78,34 +60,26 @@ class InteractionService: ObservableObject {
             return false
         }
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        if let token = UserDefaults.standard.string(forKey: "auth_token") {
-            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
-        
-        request.httpBody = bodyData
-        
         do {
-            let (data, _) = try await URLSession.shared.data(for: request)
+            let response = try await api.requestJSON(
+                endpoint: "/subscribe/toggle",
+                method: "POST",
+                body: bodyData,
+                requiresAuth: true
+            )
             
-            if let response = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                let code = response["code"] as? Int ?? 0
-                if code == 200 || code == 201 {
-                    return true
-                } else {
-                    errorMessage = response["message"] as? String ?? "操作失败"
-                    return false
-                }
+            if let code = response["code"] as? Int, code == 200 || code == 201 {
+                return true
             } else {
-                errorMessage = "无效的响应格式"
+                errorMessage = response["message"] as? String ?? "操作失败"
                 return false
             }
         } catch {
-            errorMessage = "网络错误: \(error.localizedDescription)"
+            if let apiError = error as? MaclubAPIError {
+                errorMessage = apiError.errorDescription
+            } else {
+                errorMessage = "网络错误: \(error.localizedDescription)"
+            }
             return false
         }
     }
@@ -115,43 +89,35 @@ class InteractionService: ObservableObject {
         errorMessage = nil
         defer { isLoading = false }
         
-        guard let url = URL(string: "\(baseURL)/decrypt/check/\(softwareId)") else {
-            errorMessage = "无效的URL"
-            return (false, "无效的URL")
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        if let token = UserDefaults.standard.string(forKey: "auth_token") {
-            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        } else {
+        guard api.isAuthenticated else {
             errorMessage = "用户未登录"
             return (false, "用户未登录")
         }
         
         do {
-            let (data, _) = try await URLSession.shared.data(for: request)
+            let response = try await api.requestJSON(
+                endpoint: "/decrypt/check/\(softwareId)",
+                method: "POST",
+                requiresAuth: true
+            )
             
-            if let responseDict = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                let code = responseDict["code"] as? Int ?? 0
-                let message = responseDict["message"] as? String ?? "未知消息"
-                
-                if code == 200 || code == 201 {
-                    return (true, message)
-                } else {
-                    errorMessage = message
-                    return (false, message)
-                }
+            let code = response["code"] as? Int ?? 0
+            let message = response["message"] as? String ?? "未知消息"
+            
+            if code == 200 || code == 201 {
+                return (true, message)
             } else {
-                errorMessage = "无效的响应格式"
-                return (false, "无效的响应格式")
+                errorMessage = message
+                return (false, message)
             }
         } catch {
-            errorMessage = "网络错误: \(error.localizedDescription)"
-            return (false, "网络错误: \(error.localizedDescription)")
+            if let apiError = error as? MaclubAPIError {
+                errorMessage = apiError.errorDescription
+                return (false, apiError.errorDescription ?? "未知错误")
+            } else {
+                errorMessage = "网络错误: \(error.localizedDescription)"
+                return (false, "网络错误: \(error.localizedDescription)")
+            }
         }
     }
 }

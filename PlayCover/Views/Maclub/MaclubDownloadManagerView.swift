@@ -17,7 +17,10 @@ struct MaclubDownloadManagerView: View {
                         .disabled(true)
                         .textFieldStyle(.plain)
                         .padding(10)
-                        .background(Color(.controlBackgroundColor))
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(Color(NSColor.textBackgroundColor))
+                        )
                         .cornerRadius(8)
                     
                     Button(action: {
@@ -272,7 +275,7 @@ struct DownloadRecordRow: View {
             }
         }
         .padding(16)
-        .background(Color(.controlBackgroundColor))
+        .background(Color(.textBackgroundColor))
         .cornerRadius(12)
         .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
     }

@@ -12,7 +12,7 @@ class SimCityFixService {
         
         let frameworkExists = await shellService.checkFileExists(at: expandedFrameworkPath)
         guard frameworkExists else {
-            return (false, "", "未找到anzu.sdk框架文件，请确认美区版SimCity已通过PlayCover安装\n\n注意：国区版本（com.gamecomb.simcity）不需要此修复")
+            return (false, "", "未找到anzu.sdk框架文件，请确认美区版SimCity已通过Mac俱乐部安装\n\n注意：国区版本（com.gamecomb.simcity）不需要此修复")
         }
         
         let backupPath = "\(expandedFrameworkPath).backup"

@@ -10,13 +10,13 @@ class FortniteFixService {
         
         let entitlementsExists = await shellService.checkFileExists(at: entitlementsSource)
         guard entitlementsExists else {
-            return (false, "", "未找到entitlements文件：\(entitlementsSource)\n\n请确认Fortnite已通过PlayCover安装")
+            return (false, "", "未找到entitlements文件：\(entitlementsSource)\n\n请确认Fortnite已通过Mac俱乐部安装")
         }
         
         let appDir = (embeddedDest as NSString).deletingLastPathComponent
         let result = await shellService.execute(command: "test -d '\(appDir)' && echo 'exists'")
         guard result.output == "exists" else {
-            return (false, "", "未找到应用目录：\(appDir)\n\n请确认Fortnite已通过PlayCover安装")
+            return (false, "", "未找到应用目录：\(appDir)\n\n请确认Fortnite已通过Mac俱乐部安装")
         }
         
         let cpResult = await shellService.execute(command: "cp '\(entitlementsSource)' '\(embeddedDest)'")
@@ -34,7 +34,7 @@ class FortniteFixService {
         
         let executableExists = await shellService.checkFileExists(at: executable)
         guard executableExists else {
-            return (false, "", "未找到可执行文件：\(executable)\n\n请确认Fortnite已通过PlayCover安装")
+            return (false, "", "未找到可执行文件：\(executable)\n\n请确认Fortnite已通过Mac俱乐部安装")
         }
         
         let otoolResult = await shellService.execute(command: "otool -Iv '\(executable)' | grep _os_proc_available_memory | head -n1 | awk '{print $1}'")
@@ -74,7 +74,7 @@ class FortniteFixService {
         
         let executableExists = await shellService.checkFileExists(at: executable)
         guard executableExists else {
-            return (false, "", "未找到可执行文件：\(executable)\n\n请确认Fortnite已通过PlayCover安装")
+            return (false, "", "未找到可执行文件：\(executable)\n\n请确认Fortnite已通过Mac俱乐部安装")
         }
         
         let perlCmd = """
@@ -104,7 +104,7 @@ class FortniteFixService {
         
         let result = await shellService.execute(command: "test -d '\(dataPath)' && echo 'exists'")
         guard result.output == "exists" else {
-            return (false, "", "未找到数据目录：\(dataPath)\n\n请确认Fortnite已通过PlayCover安装")
+            return (false, "", "未找到数据目录：\(dataPath)\n\n请确认Fortnite已通过Mac俱乐部安装")
         }
         
         let rmResult = await shellService.execute(command: "rm -rf '\(symlinkPath)'")

@@ -259,7 +259,8 @@ class MaclubBaseService {
                 throw MaclubAPIError.serverError(message: "无效的响应类型")
             }
             
-            if httpResponse.statusCode == 401 {
+            // 登录接口的401不应该当作登录过期处理
+            if httpResponse.statusCode == 401 && endpoint != "/auth/login" {
                 handleUnauthorized()
                 throw MaclubAPIError.unauthorized
             }

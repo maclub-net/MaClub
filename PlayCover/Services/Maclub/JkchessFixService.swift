@@ -9,7 +9,7 @@ class JkchessFixService {
         
         let exists = await shellService.checkFileExists(at: expandedPath)
         guard exists else {
-            return (false, "", "未找到金铲铲之战可执行文件，请确认游戏已通过PlayCover安装")
+            return (false, "", "未找到金铲铲之战可执行文件，请确认游戏已通过Mac俱乐部安装")
         }
         
         let patterns = [
@@ -56,7 +56,39 @@ https://www.maclub.net/appstore/01KJ4XB1N268SF2J14GKQ3TVFS
             filteredError = ""
         }
         
-        return (codesignResult.isSuccess, codesignResult.output, filteredError)
+        if codesignResult.isSuccess {
+            await enableCheckMicPermissionSync()
+            
+            let output = """
+麦克风修复完成！
+
+已执行的操作：
+1. 对游戏可执行文件应用二进制补丁
+2. 重新签名应用
+3. 自动启用 checkMicPermissionSync 选项
+
+请重启Mac俱乐部客户端并启动游戏测试。
+
+注意：如果同时通过Sideloadly、Mac俱乐部客户端和PlayCover安装了游戏，麦克风的授权记录可能会出现错乱的情况。
+
+解决方法：三个都卸载干净，再通过Mac俱乐部客户端重新安装一次即可解决问题。
+"""
+            return (true, output, filteredError)
+        }
+        
+        return (false, codesignResult.output, filteredError)
+    }
+    
+    @MainActor
+    private func enableCheckMicPermissionSync() {
+        let bundleIdentifier = "com.tencent.jkchess"
+        let apps = AppsVM.shared.apps
+        
+        if let app = apps.first(where: { $0.info.bundleIdentifier == bundleIdentifier }) {
+            let appSettings = app.settings
+            appSettings.settings.checkMicPermissionSync = true
+            appSettings.encode()
+        }
     }
     
     func fixOrientation() async -> (success: Bool, output: String, error: String) {
@@ -65,7 +97,7 @@ https://www.maclub.net/appstore/01KJ4XB1N268SF2J14GKQ3TVFS
         
         let exists = await shellService.checkFileExists(at: expandedPath)
         guard exists else {
-            return (false, "", "未找到MSDKWebView框架文件，请确认游戏已通过PlayCover安装")
+            return (false, "", "未找到MSDKWebView框架文件，请确认游戏已通过Mac俱乐部安装")
         }
         
         let awkCommand = "otool -oV '\(expandedPath)' | awk '/MSDKBaseWebViewController/{found=1} found && /supportedInterfaceOrientations/{f=1} f && /imp/{print $2; exit}'"

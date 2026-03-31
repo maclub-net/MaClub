@@ -80,6 +80,10 @@ struct ToolDetailView: View {
     @StateObject private var authService = AuthService.shared
     @State private var isCloseButtonHovered = false
     @State private var showVipAlert = false
+    @State private var showResultAlert = false
+    @State private var resultTitle = ""
+    @State private var resultMessage = ""
+    @State private var resultIsSuccess = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -146,31 +150,6 @@ struct ToolDetailView: View {
                             .foregroundStyle(.secondary)
                             .lineSpacing(8)
                         
-                        if !fixService.lastOutput.isEmpty || !fixService.lastError.isEmpty {
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text("执行结果")
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                
-                                if !fixService.lastOutput.isEmpty {
-                                    Text(fixService.lastOutput)
-                                        .font(.body)
-                                        .foregroundStyle(.primary)
-                                        .padding(16)
-                                        .background(Color(nsColor: .controlBackgroundColor))
-                                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                                }
-                                
-                                if !fixService.lastError.isEmpty {
-                                    Text(fixService.lastError)
-                                        .font(.body)
-                                        .foregroundStyle(.red)
-                                        .padding(16)
-                                        .background(Color.red.opacity(0.1))
-                                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                                }
-                            }
-                        }
                     }
                     .padding(24)
                     .frame(maxWidth: .infinity)
@@ -180,7 +159,17 @@ struct ToolDetailView: View {
                 Button(action: {
                     if authService.canUseTools() {
                         Task {
-                            await fixService.executeFix(tool: tool)
+                            let success = await fixService.executeFix(tool: tool)
+                            if success {
+                                resultTitle = "修复成功"
+                                resultMessage = fixService.lastOutput
+                                resultIsSuccess = true
+                            } else {
+                                resultTitle = "修复失败"
+                                resultMessage = fixService.lastError
+                                resultIsSuccess = false
+                            }
+                            showResultAlert = true
                         }
                     } else if authService.isAuthenticated {
                         showVipAlert = true
@@ -232,6 +221,11 @@ struct ToolDetailView: View {
             }
         } message: {
             Text("您的VIP已过期或未激活，请续费或购买VIP服务")
+        }
+        .alert(resultTitle, isPresented: $showResultAlert) {
+            Button("确定") {}
+        } message: {
+            Text(resultMessage)
         }
     }
 }

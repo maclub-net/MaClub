@@ -9,7 +9,7 @@ class AzurLaneFixService {
         
         let exists = await shellService.checkFileExists(at: expandedPath)
         guard exists else {
-            return (false, "", "未找到UnityFramework框架文件，请确认碧蓝航线已通过PlayCover安装")
+            return (false, "", "未找到UnityFramework框架文件，请确认碧蓝航线已通过Mac俱乐部安装")
         }
         
         let awkCommand = "otool -oV '\(expandedPath)' | awk '/SessionProvider/{found=1} found && /init/{f=1} f && /imp/{print $2; exit}'"

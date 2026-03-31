@@ -62,6 +62,27 @@
 		587B0C052F6EC24200CB9B60 /* MaclubHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B0BF22F6EC24200CB9B60 /* MaclubHomeView.swift */; };
 		587B0C062F6EC24200CB9B60 /* MaclubAppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B0BF02F6EC24200CB9B60 /* MaclubAppDetailView.swift */; };
 		58AEA34E2F6EDA9000820B3C /* AppDetailComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AEA34D2F6EDA9000820B3C /* AppDetailComponents.swift */; };
+		58CA03872F7BD32E000BC61E /* EndfieldFixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03862F7BD32E000BC61E /* EndfieldFixService.swift */; };
+		58CA03892F7BD337000BC61E /* EndfieldAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03882F7BD337000BC61E /* EndfieldAppData.swift */; };
+		58CA038B2F7BD90E000BC61E /* RockKingdomFixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA038A2F7BD90E000BC61E /* RockKingdomFixService.swift */; };
+		58CA038E2F7BE01C000BC61E /* NikkeCNFixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA038C2F7BE01C000BC61E /* NikkeCNFixService.swift */; };
+		58CA038F2F7BE01C000BC61E /* NikkeFixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA038D2F7BE01C000BC61E /* NikkeFixService.swift */; };
+		58CA03922F7BE026000BC61E /* NikkeCNAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03912F7BE026000BC61E /* NikkeCNAppData.swift */; };
+		58CA03932F7BE026000BC61E /* NikkeAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03902F7BE026000BC61E /* NikkeAppData.swift */; };
+		58CA039A2F7BECE2000BC61E /* BlueArchiveFixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03942F7BECE2000BC61E /* BlueArchiveFixService.swift */; };
+		58CA039B2F7BECE2000BC61E /* TowerOfFantasyFixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03992F7BECE2000BC61E /* TowerOfFantasyFixService.swift */; };
+		58CA039C2F7BECE2000BC61E /* LoveAndDeepspaceFixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03952F7BECE2000BC61E /* LoveAndDeepspaceFixService.swift */; };
+		58CA039D2F7BECE2000BC61E /* Persona5XFixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03962F7BECE2000BC61E /* Persona5XFixService.swift */; };
+		58CA039E2F7BECE2000BC61E /* TorchlightFixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03982F7BECE2000BC61E /* TorchlightFixService.swift */; };
+		58CA039F2F7BECE2000BC61E /* RacingMasterFixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03972F7BECE2000BC61E /* RacingMasterFixService.swift */; };
+		58CA03A62F7BECF0000BC61E /* BlueArchiveAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03A02F7BECF0000BC61E /* BlueArchiveAppData.swift */; };
+		58CA03A72F7BECF0000BC61E /* RacingMasterAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03A32F7BECF0000BC61E /* RacingMasterAppData.swift */; };
+		58CA03A82F7BECF0000BC61E /* LoveAndDeepspaceAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03A12F7BECF0000BC61E /* LoveAndDeepspaceAppData.swift */; };
+		58CA03A92F7BECF0000BC61E /* TorchlightAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03A42F7BECF0000BC61E /* TorchlightAppData.swift */; };
+		58CA03AA2F7BECF0000BC61E /* Persona5XAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03A22F7BECF0000BC61E /* Persona5XAppData.swift */; };
+		58CA03AB2F7BECF0000BC61E /* TowerOfFantasyAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA03A52F7BECF0000BC61E /* TowerOfFantasyAppData.swift */; };
+		58F9CA5A2F7BCA9100EE7F53 /* NeteasePartyFixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F9CA592F7BCA9100EE7F53 /* NeteasePartyFixService.swift */; };
+		58F9CA5C2F7BCA9D00EE7F53 /* NeteasePartyAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F9CA5B2F7BCA9D00EE7F53 /* NeteasePartyAppData.swift */; };
 		6888981729F9158700105D9C /* IPASourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6888981629F9158700105D9C /* IPASourceView.swift */; };
 		68E48B952957046D00C39879 /* DownloadManager in Frameworks */ = {isa = PBXBuildFile; productRef = 68E48B942957046D00C39879 /* DownloadManager */; };
 		68E48B97295704A600C39879 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E48B96295704A600C39879 /* Downloader.swift */; };
@@ -202,6 +223,27 @@
 		587B0BF52F6EC24200CB9B60 /* MaclubUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaclubUserProfileView.swift; sourceTree = "<group>"; };
 		587B0BF62F6EC24200CB9B60 /* MaclubUserStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaclubUserStatusView.swift; sourceTree = "<group>"; };
 		58AEA34D2F6EDA9000820B3C /* AppDetailComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailComponents.swift; sourceTree = "<group>"; };
+		58CA03862F7BD32E000BC61E /* EndfieldFixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndfieldFixService.swift; sourceTree = "<group>"; };
+		58CA03882F7BD337000BC61E /* EndfieldAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndfieldAppData.swift; sourceTree = "<group>"; };
+		58CA038A2F7BD90E000BC61E /* RockKingdomFixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockKingdomFixService.swift; sourceTree = "<group>"; };
+		58CA038C2F7BE01C000BC61E /* NikkeCNFixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikkeCNFixService.swift; sourceTree = "<group>"; };
+		58CA038D2F7BE01C000BC61E /* NikkeFixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikkeFixService.swift; sourceTree = "<group>"; };
+		58CA03902F7BE026000BC61E /* NikkeAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikkeAppData.swift; sourceTree = "<group>"; };
+		58CA03912F7BE026000BC61E /* NikkeCNAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikkeCNAppData.swift; sourceTree = "<group>"; };
+		58CA03942F7BECE2000BC61E /* BlueArchiveFixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueArchiveFixService.swift; sourceTree = "<group>"; };
+		58CA03952F7BECE2000BC61E /* LoveAndDeepspaceFixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveAndDeepspaceFixService.swift; sourceTree = "<group>"; };
+		58CA03962F7BECE2000BC61E /* Persona5XFixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persona5XFixService.swift; sourceTree = "<group>"; };
+		58CA03972F7BECE2000BC61E /* RacingMasterFixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingMasterFixService.swift; sourceTree = "<group>"; };
+		58CA03982F7BECE2000BC61E /* TorchlightFixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchlightFixService.swift; sourceTree = "<group>"; };
+		58CA03992F7BECE2000BC61E /* TowerOfFantasyFixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerOfFantasyFixService.swift; sourceTree = "<group>"; };
+		58CA03A02F7BECF0000BC61E /* BlueArchiveAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueArchiveAppData.swift; sourceTree = "<group>"; };
+		58CA03A12F7BECF0000BC61E /* LoveAndDeepspaceAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveAndDeepspaceAppData.swift; sourceTree = "<group>"; };
+		58CA03A22F7BECF0000BC61E /* Persona5XAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persona5XAppData.swift; sourceTree = "<group>"; };
+		58CA03A32F7BECF0000BC61E /* RacingMasterAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingMasterAppData.swift; sourceTree = "<group>"; };
+		58CA03A42F7BECF0000BC61E /* TorchlightAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchlightAppData.swift; sourceTree = "<group>"; };
+		58CA03A52F7BECF0000BC61E /* TowerOfFantasyAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerOfFantasyAppData.swift; sourceTree = "<group>"; };
+		58F9CA592F7BCA9100EE7F53 /* NeteasePartyFixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeteasePartyFixService.swift; sourceTree = "<group>"; };
+		58F9CA5B2F7BCA9D00EE7F53 /* NeteasePartyAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeteasePartyAppData.swift; sourceTree = "<group>"; };
 		6854C5E528D53C9500CE28A0 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6888981629F9158700105D9C /* IPASourceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPASourceView.swift; sourceTree = "<group>"; };
 		68C79E67296741580041DBC9 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -456,6 +498,17 @@
 		587B0BCF2F6EC22100CB9B60 /* Maclub */ = {
 			isa = PBXGroup;
 			children = (
+				58CA03942F7BECE2000BC61E /* BlueArchiveFixService.swift */,
+				58CA03952F7BECE2000BC61E /* LoveAndDeepspaceFixService.swift */,
+				58CA03962F7BECE2000BC61E /* Persona5XFixService.swift */,
+				58CA03972F7BECE2000BC61E /* RacingMasterFixService.swift */,
+				58CA03982F7BECE2000BC61E /* TorchlightFixService.swift */,
+				58CA03992F7BECE2000BC61E /* TowerOfFantasyFixService.swift */,
+				58CA038C2F7BE01C000BC61E /* NikkeCNFixService.swift */,
+				58CA038D2F7BE01C000BC61E /* NikkeFixService.swift */,
+				58CA038A2F7BD90E000BC61E /* RockKingdomFixService.swift */,
+				58CA03862F7BD32E000BC61E /* EndfieldFixService.swift */,
+				58F9CA592F7BCA9100EE7F53 /* NeteasePartyFixService.swift */,
 				580D24E62F73B95F00CB6E85 /* MaclubBaseService.swift */,
 				587B0BC32F6EC22100CB9B60 /* AppDetailService.swift */,
 				587B0BC42F6EC22100CB9B60 /* AuthService.swift */,
@@ -476,6 +529,16 @@
 		587B0BE12F6EC23300CB9B60 /* Maclub */ = {
 			isa = PBXGroup;
 			children = (
+				58CA03A02F7BECF0000BC61E /* BlueArchiveAppData.swift */,
+				58CA03A12F7BECF0000BC61E /* LoveAndDeepspaceAppData.swift */,
+				58CA03A22F7BECF0000BC61E /* Persona5XAppData.swift */,
+				58CA03A32F7BECF0000BC61E /* RacingMasterAppData.swift */,
+				58CA03A42F7BECF0000BC61E /* TorchlightAppData.swift */,
+				58CA03A52F7BECF0000BC61E /* TowerOfFantasyAppData.swift */,
+				58CA03902F7BE026000BC61E /* NikkeAppData.swift */,
+				58CA03912F7BE026000BC61E /* NikkeCNAppData.swift */,
+				58CA03882F7BD337000BC61E /* EndfieldAppData.swift */,
+				58F9CA5B2F7BCA9D00EE7F53 /* NeteasePartyAppData.swift */,
 				580D24E82F73B97200CB6E85 /* RockKingdomAppData.swift */,
 				587B0BDC2F6EC23300CB9B60 /* AppDataManager.swift */,
 				587B0BDD2F6EC23300CB9B60 /* AzurLaneAppData.swift */,
@@ -801,6 +864,7 @@
 				6E66B0D528A0039D0099B907 /* ToastView.swift in Sources */,
 				92ECD8A3274E75CD00DB7AC6 /* Installer.swift in Sources */,
 				B6825C3528F3D23600E3015A /* InstallSettings.swift in Sources */,
+				58F9CA5C2F7BCA9D00EE7F53 /* NeteasePartyAppData.swift in Sources */,
 				92EE06DE274EC09F002C907B /* Entitlements.swift in Sources */,
 				92ECD8A5274E763700DB7AC6 /* IPA.swift in Sources */,
 				365AFB0828847B75008B3542 /* Sparkle.swift in Sources */,
@@ -809,11 +873,14 @@
 				9280871B2824A8D20034C510 /* SoundDeviceService.swift in Sources */,
 				34775E752D493B59001586C2 /* CachedAsyncImageWrapper.swift in Sources */,
 				A25930F42C49E2BC0006C91C /* PlayAppVM.swift in Sources */,
+				58CA038B2F7BD90E000BC61E /* RockKingdomFixService.swift in Sources */,
 				92ECD8AE274E787200DB7AC6 /* AppInfo.swift in Sources */,
 				6E250971297F5281004D754C /* SigningSetupView.swift in Sources */,
 				928C01D9272E162C007EB2DF /* InstallVM.swift in Sources */,
 				6E550A8B29BA507200EFC15C /* Macho.swift in Sources */,
 				6E25096F297F5032004D754C /* FileExtensions.swift in Sources */,
+				58CA03922F7BE026000BC61E /* NikkeCNAppData.swift in Sources */,
+				58CA03932F7BE026000BC61E /* NikkeAppData.swift in Sources */,
 				53F4D2A026C43C690020167C /* Log.swift in Sources */,
 				B67C1A132AE80A7400F396CC /* StoreAppVM.swift in Sources */,
 				B6603E1128E206A300DEFA3F /* UninstallSettings.swift in Sources */,
@@ -825,6 +892,7 @@
 				92EE06DA274EB009002C907B /* PlayApp.swift in Sources */,
 				B429B2642DC204FA001FF7D9 /* VersionCheck.swift in Sources */,
 				53F50C4926E3CA42007AD2D3 /* AppLibraryView.swift in Sources */,
+				58CA03872F7BD32E000BC61E /* EndfieldFixService.swift in Sources */,
 				6E66B0D1289F57B00099B907 /* Documentation.docc in Sources */,
 				53F3802826EB6F6B00D6B525 /* NotifyService.swift in Sources */,
 				6E5C68BA289865C8008EC11B /* MainView.swift in Sources */,
@@ -864,6 +932,7 @@
 				5314D1EE26C402EC00A0A727 /* Shell.swift in Sources */,
 				6E7CA16528B4D02900216CD8 /* ITunesResponse.swift in Sources */,
 				ABDAD80C298A1E3E00DC164F /* KeyCoverViews.swift in Sources */,
+				58F9CA5A2F7BCA9100EE7F53 /* NeteasePartyFixService.swift in Sources */,
 				6EF893D528F34CD1004AB6D9 /* NetworkVM.swift in Sources */,
 				8783D00B26B8C9E600171041 /* URLExtensions.swift in Sources */,
 				6EB4B57428C93E0600630890 /* LegacySettings.swift in Sources */,
@@ -882,12 +951,21 @@
 				587B0BFF2F6EC24200CB9B60 /* FixButton.swift in Sources */,
 				587B0C002F6EC24200CB9B60 /* AppDetailWindowManager.swift in Sources */,
 				587B0C012F6EC24200CB9B60 /* ToolCard.swift in Sources */,
+				58CA03A62F7BECF0000BC61E /* BlueArchiveAppData.swift in Sources */,
+				58CA03A72F7BECF0000BC61E /* RacingMasterAppData.swift in Sources */,
+				58CA03A82F7BECF0000BC61E /* LoveAndDeepspaceAppData.swift in Sources */,
+				58CA03A92F7BECF0000BC61E /* TorchlightAppData.swift in Sources */,
+				58CA03AA2F7BECF0000BC61E /* Persona5XAppData.swift in Sources */,
+				58CA03AB2F7BECF0000BC61E /* TowerOfFantasyAppData.swift in Sources */,
+				58CA038E2F7BE01C000BC61E /* NikkeCNFixService.swift in Sources */,
+				58CA038F2F7BE01C000BC61E /* NikkeFixService.swift in Sources */,
 				587B0C022F6EC24200CB9B60 /* MaclubDownloadManagerView.swift in Sources */,
 				587B0C032F6EC24200CB9B60 /* MaclubLoginView.swift in Sources */,
 				587B0C042F6EC24200CB9B60 /* MaclubUserProfileView.swift in Sources */,
 				587B0C052F6EC24200CB9B60 /* MaclubHomeView.swift in Sources */,
 				587B0C062F6EC24200CB9B60 /* MaclubAppDetailView.swift in Sources */,
 				B17FD04728C7B0D900B1D4CA /* AssetsExtractor.swift in Sources */,
+				58CA03892F7BD337000BC61E /* EndfieldAppData.swift in Sources */,
 				ABDAD80629893CF900DC164F /* KeyCoverSetupViews.swift in Sources */,
 				587B0BE22F6EC23300CB9B60 /* AppDataManager.swift in Sources */,
 				587B0BE32F6EC23300CB9B60 /* SimCityAppData.swift in Sources */,
@@ -896,6 +974,12 @@
 				587B0BE62F6EC23300CB9B60 /* FortniteAppData.swift in Sources */,
 				6888981729F9158700105D9C /* IPASourceView.swift in Sources */,
 				6EE8265028E8AB2B003935BC /* DownloadVM.swift in Sources */,
+				58CA039A2F7BECE2000BC61E /* BlueArchiveFixService.swift in Sources */,
+				58CA039B2F7BECE2000BC61E /* TowerOfFantasyFixService.swift in Sources */,
+				58CA039C2F7BECE2000BC61E /* LoveAndDeepspaceFixService.swift in Sources */,
+				58CA039D2F7BECE2000BC61E /* Persona5XFixService.swift in Sources */,
+				58CA039E2F7BECE2000BC61E /* TorchlightFixService.swift in Sources */,
+				58CA039F2F7BECE2000BC61E /* RacingMasterFixService.swift in Sources */,
 				AB00EB5229A7BF17006F3225 /* KeyCover.swift in Sources */,
 				68E48B9C295709C000C39879 /* Cacher.swift in Sources */,
 				53D9DAF326C1849D0071959E /* PlayCoverError.swift in Sources */,
@@ -1018,7 +1102,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 102;
+				CURRENT_PROJECT_VERSION = 105;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "PlayCover/Preview\\ Content";
@@ -1034,7 +1118,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.5;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = net.maclub.PlayCover;
@@ -1122,7 +1206,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 102;
+				CURRENT_PROJECT_VERSION = 105;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "PlayCover/Preview\\ Content";
@@ -1138,7 +1222,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.5;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = net.maclub.PlayCover;

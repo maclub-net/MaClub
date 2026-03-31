@@ -15,7 +15,17 @@ class AppDataManager {
             SimCityAppData.createApp(),
             FortniteAppData.createApp(),
             AzurLaneAppData.createApp(),
-            RockKingdomAppData.createApp()
+            RockKingdomAppData.createApp(),
+            NeteasePartyAppData.createApp(),
+            EndfieldAppData.createApp(),
+            NikkeAppData.createApp(),
+            NikkeCNAppData.createApp(),
+            BlueArchiveAppData.createApp(),
+            TowerOfFantasyAppData.createApp(),
+            LoveAndDeepspaceAppData.createApp(),
+            Persona5XAppData.createApp(),
+            TorchlightAppData.createApp(),
+            RacingMasterAppData.createApp()
         ]
     }
 }
